@@ -1,0 +1,59 @@
+name: Deploy empty Daily Word
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Ensure no draft content is published
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          data = json.loads(Path("data/publications.json").read_text(encoding="utf-8"))
+          if data.get("schemaVersion") != 1 or data.get("published") != [] or data.get("dailySchedule") != []:
+              raise SystemExit("Deployment blocked: only the empty unpublished feed is permitted.")
+          forbidden = ["preview.html", "preview-data.js", "QT_Pilot_3_Tracks_v1.md"]
+          if any(Path(x).exists() for x in forbidden):
+              raise SystemExit("Deployment blocked: unapproved draft or preview file found.")
+          allowed = ["index.html", "style.css", "app.js", "manifest.webmanifest",
+                     "assets/icon.svg", "data/publications.json"]
+          for x in allowed:
+              if not Path(x).is_file():
+                  raise SystemExit(f"Missing required file: {x}")
+          from shutil import copy2
+          root = Path("_site")
+          root.mkdir(exist_ok=True)
+          for x in allowed:
+              dest = root / x
+              dest.parent.mkdir(parents=True, exist_ok=True)
+              copy2(x, dest)
+          (root / ".nojekyll").write_text("")
+          PY
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+      - name: Upload approved static files
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - name: Deploy GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

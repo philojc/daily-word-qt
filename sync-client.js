@@ -1,143 +1,137 @@
 (() => {
-  "use strict";
-  const api = window.DailyWordLocalAPI;
-  const endpoint = String(window.DW_SYNC_ENDPOINT || "").trim();
-  const STORE = "dailyword.sync.credentials.v1";
-  const QUEUE = "dailyword.sync.queue.v1";
-  const ALPHABET = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
-  const get = key => {try{return JSON.parse(localStorage.getItem(key)||"{}")}catch{return{}}};
-  const store = (key,obj) => {try{localStorage.setItem(key,JSON.stringify(obj))}catch{}};
-  const credentials=get(STORE), pending=get(QUEUE);
-  let iframe=null, iframeOrigin="", resolveReady=null, rejectReady=null, readyPromise=null;
-  let nextId=0, busy=false, status="코드를 입력하면 다른 기기에서 기록을 불러올 수 있습니다.";
-  const waiting=new Map();
-  const validOrigin=origin=>{
-    try{
-      const u=new URL(origin),h=u.hostname;
-      return u.protocol==="https:"&&(h==="script.google.com"||h==="script.googleusercontent.com"||h.endsWith("-script.googleusercontent.com"));
-    }catch{return false;}
-  };
-  const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-  function ready(){
-    if(!endpoint) return Promise.reject(Error("동기화 서버를 아직 연결하지 않았습니다."));
-    if(readyPromise)return readyPromise;
-    readyPromise=new Promise((resolve,reject)=>{resolveReady=resolve;rejectReady=reject;});
-    iframe=document.createElement("iframe");
-    iframe.src=endpoint;
-    iframe.title="매일 말씀 동기화 연결";
-    iframe.style.cssText="display:none;width:1px;height:1px;border:0";
-    document.body.appendChild(iframe);
-    setTimeout(()=>{if(!iframeOrigin&&rejectReady){rejectReady(Error("동기화 서버 연결 실패"));rejectReady=null;}},15000);
-    return readyPromise;
-  }
-  window.addEventListener("message",ev=>{
-    if(!iframe||ev.source!==iframe.contentWindow||!validOrigin(ev.origin))return;
-    const d=ev.data;if(!d||typeof d!=="object")return;
-    if(d.type==="DW_SYNC_READY"){iframeOrigin=ev.origin;if(resolveReady){resolveReady();resolveReady=null;rejectReady=null;}return;}
-    if(d.type!=="DW_SYNC_RESPONSE")return;
-    const w=waiting.get(d.id);if(!w)return;
-    waiting.delete(d.id);clearTimeout(w.timeout);
-    if(d.error)w.reject(Error(d.error));else w.resolve(d.result);
+"use strict";
+const api=window.DailyWordLocalAPI;
+const endpoint=String(window.DW_SYNC_ENDPOINT||"").trim();
+const STORE="dailyword.sync.names.v2",QUEUE="dailyword.sync.queue.v1";
+const read=k=>{try{return JSON.parse(localStorage.getItem(k)||"{}")}catch{return{}}};
+const save=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v))}catch{}};
+const names=read(STORE),pending=read(QUEUE);
+let frame=null,frameOrigin="",readyPromise=null,readyResolve=null,readyReject=null,idSeq=0,busy=false;
+let status="이름을 입력하고 새로 등록하거나 기존 기록을 불러오세요.";
+const waiting=new Map();
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const connected=()=>names[api.active()]||null;
+const parentOrigin=origin=>{try{const u=new URL(origin),h=u.hostname;return u.protocol==="https:"&&(h==="script.google.com"||h==="script.googleusercontent.com"||h.endsWith("-script.googleusercontent.com"));}catch{return false;}};
+
+function ready(){
+  if(!endpoint)return Promise.reject(Error("동기화 서버가 아직 연결되지 않았습니다."));
+  if(readyPromise)return readyPromise;
+  readyPromise=new Promise((resolve,reject)=>{readyResolve=resolve;readyReject=reject;});
+  frame=document.createElement("iframe");frame.src=endpoint;frame.title="매일 말씀 동기화";
+  frame.style.cssText="display:none;width:1px;height:1px;border:0";
+  document.body.appendChild(frame);
+  setTimeout(()=>{if(!frameOrigin&&readyReject){readyReject(Error("서버 연결 시간 초과"));readyReject=null;}},15000);
+  return readyPromise;
+}
+window.addEventListener("message",ev=>{
+  if(!frame||ev.source!==frame.contentWindow||!parentOrigin(ev.origin))return;
+  const data=ev.data;if(!data||typeof data!=="object")return;
+  if(data.type==="DW_SYNC_READY"){frameOrigin=ev.origin;if(readyResolve){readyResolve();readyResolve=null;readyReject=null;}return;}
+  if(data.type!=="DW_SYNC_RESPONSE")return;
+  const item=waiting.get(data.id);if(!item)return;
+  waiting.delete(data.id);clearTimeout(item.timeout);
+  if(data.error)item.reject(Error(data.error));else item.resolve(data.result);
+});
+async function rpc(request){
+  await ready();if(!frameOrigin)throw Error("서버 준비 중");
+  const id=++idSeq;
+  return new Promise((resolve,reject)=>{
+    const timeout=setTimeout(()=>{waiting.delete(id);reject(Error("서버 응답 시간 초과"));},25000);
+    waiting.set(id,{resolve,reject,timeout});
+    frame.contentWindow.postMessage({type:"DW_SYNC_REQUEST",id,request},frameOrigin);
   });
-  async function call(req){
-    await ready();
-    if(!iframeOrigin)throw Error("동기화 연결 대기 중");
-    const id=++nextId;
-    return new Promise((resolve,reject)=>{
-      const timeout=setTimeout(()=>{waiting.delete(id);reject(Error("동기화 응답 시간 초과"));},25000);
-      waiting.set(id,{resolve,reject,timeout});
-      iframe.contentWindow.postMessage({type:"DW_SYNC_REQUEST",id,request:req},iframeOrigin);
-    });
+}
+const notify=s=>{status=s;render();};
+function render(){
+  const root=document.getElementById("dw-sync-root");if(!root)return;
+  if(!endpoint){
+    root.innerHTML='<div class="q-profile-pane"><strong>이름만으로 기록 이어 읽기</strong><p class="q-tiny">이름만 입력하는 방식으로 준비했습니다. 서버 배포 주소를 아직 연결하지 않아, 현재는 이 기기에 기록이 저장됩니다.</p></div>';
+    return;
   }
-  function activeCred(){return credentials[api.active()]||null;}
-  function setStatus(s){status=s;render();}
-  function render(){
-    const el=document.getElementById("dw-sync-root");if(!el)return;
-    if(!endpoint){el.innerHTML='<div class="q-profile-pane"><strong>이름·코드로 기기 간 동기화</strong><p class="q-tiny">개인 기록 저장소는 준비됐지만 연결용 서버 주소를 설정하기 전입니다. 현재 기록은 이 기기에만 저장되며, 기존 기록 내보내기 기능은 계속 사용할 수 있습니다.</p></div>';return;}
-    const account=activeCred();
-    if(account){
-      const count=(pending[api.active()]||[]).length;
-      el.innerHTML='<div class="q-profile-pane dw-panel"><strong>기록 동기화 · '+esc(account.name)+'</strong><p class="q-tiny">'+esc(status)+'</p><p class="q-tiny">미전송 변경 '+count+'건 · 기기마다 같은 이름과 코드를 입력하면 기록을 불러올 수 있습니다.</p><button class="dw-btn" data-sync="refresh">서버에서 다시 불러오기</button><button class="dw-secondary" data-sync="retry">미전송 기록 다시 보내기</button><button class="dw-secondary" data-sync="disconnect">이 기기 연결 해제</button></div>';
-      return;
+  const account=connected();
+  if(account){
+    const n=(pending[api.active()]||[]).length;
+    root.innerHTML='<div class="q-profile-pane dw-panel"><strong>기록 연결됨 · '+esc(account.name)+'</strong><p class="q-tiny">'+esc(status)+'</p><p class="q-tiny">서버에 보내지 못한 변경 '+n+'건</p><button class="dw-btn" data-sync="refresh">진도 새로 불러오기</button><button class="dw-secondary" data-sync="retry">미전송 기록 다시 보내기</button><button class="dw-secondary" data-sync="disconnect">이 기기 연결 해제</button></div>';
+  }else{
+    root.innerHTML='<div class="q-profile-pane dw-panel"><strong>이름으로 읽던 곳 이어가기</strong><p class="q-tiny">같은 이름을 입력하면 다른 휴대폰에서 읽던 진도를 불러올 수 있습니다. 새 이름을 등록할 때 중복 여부를 자동으로 검사합니다.</p><div class="dw-fields"><label>읽기 이름<input id="dw-sync-name" maxlength="30" autocomplete="nickname" placeholder="예: 준우"/></label></div><div class="dw-actions"><button class="dw-btn" data-sync="load">기존 이름으로 이어 읽기</button><button class="dw-secondary" data-sync="create">새 이름 등록</button></div><p class="q-tiny">'+esc(status)+'</p><p class="q-tiny">※ 별도의 비밀번호가 없습니다. <strong>같은 이름을 아는 사람은 읽기 기록을 보고 수정할 수 있습니다.</strong> 성경 진도 외의 개인 정보는 저장하지 마세요.</p></div>';
+  }
+}
+window.DWRenderSync=render;
+function normalizeName(v){return String(v||"").normalize("NFC").trim().replace(/\s+/g," ");}
+async function enter(op){
+  const name=normalizeName(document.getElementById("dw-sync-name")?.value);
+  if(!name||name.length>30)return notify("이름을 1~30자로 입력해 주세요.");
+  notify("읽기 기록을 확인하는 중입니다…");
+  try{
+    const before=api.current();
+    const data=await rpc({op,name});
+    if(!data?.ok||!data.state)throw Error("서버에서 기록을 불러오지 못했습니다.");
+    const profileId=api.activateCloud(data.name,data.state);
+    names[profileId]={name:data.name};
+    save(STORE,names);
+    notify(op==="create"?"새 이름으로 등록했습니다.":"기존 기록을 불러왔습니다.");
+    if(op==="create"&&((before.completed||[]).length||(before.favorites||[]).length||before.last)){
+      if(confirm("이 기기에 기존 읽기 기록이 있습니다. 새 이름의 기록에 복사하시겠습니까?")){
+        const actions=[
+          ...(before.completed||[]).map(id=>({kind:"mark",sessionId:id,value:true})),
+          ...(before.favorites||[]).map(id=>({kind:"favorite",sessionId:id,value:true})),
+          ...Object.entries(before.lastByTrack||{}).map(([track,sessionId])=>({kind:"open",track,sessionId}))
+        ];
+        const q=pending[profileId]||(pending[profileId]=[]);
+        q.push(...actions);
+        save(QUEUE,pending);
+        flush();
+      }
     }
-    el.innerHTML='<div class="q-profile-pane dw-panel"><strong>다른 기기에서도 이어 읽기</strong><p class="q-tiny">Google 로그인 없이 이름과 개인 코드만 입력하세요. 같은 이름과 코드로 접속하면 읽음·즐겨찾기·5개 트랙 진도가 동기화됩니다.</p><div class="dw-fields"><label>이름<input id="dw-sync-name" maxlength="30" autocomplete="nickname" placeholder="예: 준우"/></label><label>개인 코드<input id="dw-sync-code" maxlength="40" spellcheck="false" autocomplete="off" type="password" placeholder="16자리 이상 코드"/></label></div><button class="dw-secondary" data-sync="generate">안전한 개인 코드 자동 만들기</button><button class="dw-secondary" data-sync="toggle-code">코드 표시/숨김</button><div class="dw-actions"><button class="dw-btn" data-sync="connect">기존 기록 불러오기</button><button class="dw-btn" data-sync="create">새 동기화 기록 만들기</button></div><p class="q-tiny">'+esc(status)+' 개인 코드를 잃어버리면 복구가 어렵습니다. 비밀번호 관리자 등에 안전하게 보관하세요.</p></div>';
+  }catch(err){notify("연결되지 않았습니다: "+err.message);}
+}
+async function flush(){
+  const profileId=api.active(),account=connected(),q=pending[profileId];
+  if(busy||!account||!q?.length)return;
+  busy=true;
+  try{
+    while(q.length){
+      const result=await rpc({op:"apply",name:account.name,change:q[0]});
+      if(!result?.ok)throw Error("서버가 저장을 거절했습니다.");
+      q.shift();save(QUEUE,pending);
+      if(!q.length&&api.active()===profileId)api.activateCloud(account.name,result.state);
+    }
+    notify("변경 사항이 서버에 저장됐습니다.");
+  }catch(err){notify("기기에는 기록됐지만 서버 동기화가 실패했습니다: "+err.message);}
+  finally{busy=false;}
+}
+window.DWOnLocalChange=change=>{
+  const profileId=api.active(),account=connected();
+  if(!account)return;
+  const q=pending[profileId]||(pending[profileId]=[]);
+  if(q.length>=200){notify("저장 대기가 너무 많습니다. 인터넷 연결을 확인해 주세요.");return;}
+  q.push(change);save(QUEUE,pending);flush();
+};
+async function refresh(){
+  const profileId=api.active(),account=connected();if(!account)return;
+  if((pending[profileId]||[]).length){await flush();if((pending[profileId]||[]).length)return;}
+  notify("서버에서 기록을 불러오는 중입니다…");
+  try{
+    const result=await rpc({op:"load",name:account.name});
+    if(!result?.ok)throw Error("서버 응답 오류");
+    if(api.active()===profileId)api.activateCloud(result.name,result.state);
+    notify("최근 기록을 불러왔습니다.");
+  }catch(err){notify("불러오기에 실패했습니다: "+err.message);}
+}
+document.addEventListener("click",e=>{
+  const node=e.target.closest("[data-sync]");if(!node)return;
+  const action=node.dataset.sync;
+  if(action==="create"||action==="load")enter(action);
+  else if(action==="refresh")refresh();
+  else if(action==="retry")flush();
+  else if(action==="disconnect"){
+    if(!confirm("이 기기의 서버 연결만 해제할까요? 서버에 있는 기록은 그대로 유지됩니다."))return;
+    delete names[api.active()];save(STORE,names);notify("연결을 해제했습니다.");
   }
-  window.DWRenderSync=render;
-  function strongCode(){
-    if(!window.crypto?.getRandomValues)throw Error("보안 코드 생성에 필요한 기능을 사용할 수 없습니다.");
-    const bytes=new Uint8Array(20);crypto.getRandomValues(bytes);
-    return Array.from(bytes,b=>ALPHABET[b%ALPHABET.length]).join("");
-  }
-  async function auth(op){
-    const name=String(document.getElementById("dw-sync-name")?.value||"").trim();
-    const code=String(document.getElementById("dw-sync-code")?.value||"").trim().toUpperCase().replace(/[\s-]/g,"");
-    if(!name || !/^[A-Z2-9]{16,32}$/.test(code))return setStatus("이름과 16~32자리 개인 코드를 확인해 주세요.");
-    if(op==="create"&&!confirm("이 이름과 코드로 새 동기화 기록을 만드시겠습니까? 기존 기기 기록은 자동으로 합치지 않습니다."))return;
-    const previous=api.current();
-    setStatus("서버에 연결하는 중입니다…");
-    try{
-      const result=await call({op,name,code});
-      if(!result?.ok||!result.state)throw Error("동기화 서버 응답 오류");
-      const id=api.activateCloud(result.name,result.state);
-      credentials[id]={name:result.name,code};
-      store(STORE,credentials);
-      setStatus("서버와 연결되었습니다. "+(op==="create"?"개인 코드를 안전하게 보관하세요.":"읽기 기록을 불러왔습니다."));
-      if(op==="create" && ((previous.completed||[]).length||(previous.favorites||[]).length||previous.last)){
-        const migrate=confirm("이 기기에 기존 읽기 기록이 있습니다. 새 동기화 프로필에 복사하시겠습니까?");
-        if(migrate){
-          for(const v of previous.completed||[])window.DWOnLocalChange({kind:"mark",sessionId:v,value:true});
-          for(const v of previous.favorites||[])window.DWOnLocalChange({kind:"favorite",sessionId:v,value:true});
-          for(const [track,sessionId] of Object.entries(previous.lastByTrack||{}))
-            window.DWOnLocalChange({kind:"open",track,sessionId});
-        }
-      }
-      flush();
-    }catch(err){setStatus("연결되지 않았습니다: "+err.message);}
-  }
-  async function flush(){
-    const id=api.active(),cred=activeCred(),queue=pending[id];
-    if(busy||!cred||!queue?.length)return;
-    busy=true;
-    try{
-      while(queue.length){
-        const response=await call({op:"apply",name:cred.name,code:cred.code,change:queue[0]});
-        if(!response?.ok)throw Error("서버 저장 실패");
-        queue.shift();store(QUEUE,pending);
-        if(queue.length===0)api.activateCloud(cred.name,response.state);
-      }
-      setStatus("모든 읽기 기록이 서버에 저장됐습니다.");
-    }catch(err){setStatus("이 기기에는 저장됐지만 동기화는 실패했습니다: "+err.message);}
-    finally{busy=false;}
-  }
-  window.DWOnLocalChange=change=>{
-    const id=api.active();if(!activeCred())return;
-    const arr=pending[id]||(pending[id]=[]);
-    if(arr.length>=200){setStatus("저장 대기 기록이 너무 많습니다. 연결을 확인해 주세요.");return;}
-    arr.push(change);store(QUEUE,pending);flush();
-  };
-  async function refresh(){
-    const id=api.active(),cred=activeCred();if(!cred)return;
-    if((pending[id]||[]).length){await flush();if((pending[id]||[]).length)return;}
-    setStatus("서버의 읽기 기록을 확인 중입니다…");
-    try{
-      const x=await call({op:"load",name:cred.name,code:cred.code});
-      if(!x?.ok)throw Error("서버 오류");
-      api.activateCloud(cred.name,x.state);
-      setStatus("서버와 동기화되었습니다.");
-    }catch(err){setStatus("읽기 기록을 가져오지 못했습니다: "+err.message);}
-  }
-  document.addEventListener("click",e=>{
-    const b=e.target.closest("[data-sync]");if(!b)return;
-    const cmd=b.dataset.sync;
-    if(cmd==="generate"){try{document.getElementById("dw-sync-code").value=strongCode();document.getElementById("dw-sync-code").type="text";setStatus("안전한 코드를 만들었습니다. 다른 기기에서 똑같이 입력할 수 있도록 복사해 두세요.");}catch(err){setStatus(err.message);}}
-    else if(cmd==="toggle-code"){const input=document.getElementById("dw-sync-code");if(input)input.type=input.type==="password"?"text":"password";}
-    else if(cmd==="create"||cmd==="connect")auth(cmd==="create"?"create":"load");
-    else if(cmd==="refresh")refresh();
-    else if(cmd==="retry")flush();
-    else if(cmd==="disconnect"){if(!confirm("이 기기에서만 동기화 코드를 지우시겠습니까? 서버의 읽기 기록은 유지됩니다."))return;delete credentials[api.active()];store(STORE,credentials);setStatus("이 기기의 자동 연결을 해제했습니다.");}
-  });
-  window.addEventListener("online",()=>{if(activeCred())flush();});
-  document.addEventListener("visibilitychange",()=>{if(!document.hidden&&activeCred())refresh();});
-  render();
-  if(endpoint&&activeCred())refresh();
+});
+window.DWOnProfileChange=()=>{if(connected())refresh();};
+window.addEventListener("online",()=>{if(connected())flush();});
+document.addEventListener("visibilitychange",()=>{if(!document.hidden&&connected())refresh();});
+render();
+if(endpoint&&connected())refresh();
 })();

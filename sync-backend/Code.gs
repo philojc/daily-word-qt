@@ -67,13 +67,13 @@ function syncRpc(req) {
 }
 
 function normalizeName_(v) {
-  const s=String(v||'').trim().replace(/\\s+/g,' ');
-  if(s.length<1 || s.length>30 || !/^[\\p{L}\\p{N} _.-]+$/u.test(s))
+  const s=String(v||'').trim().replace(/\s+/g,' ');
+  if(s.length<1 || s.length>30 || !/^[\p{L}\p{N} _.-]+$/u.test(s))
     throw new Error('Display name must be 1–30 letters or numbers.');
   return s;
 }
 function normalizeCode_(v){
-  const s=String(v||'').toUpperCase().replace(/[\\s-]/g,'');
+  const s=String(v||'').toUpperCase().replace(/[\s-]/g,'');
   if(!/^[A-Z2-9]{16,32}$/.test(s))throw new Error('Use a private code with 16–32 letters or digits.');
   return s;
 }

@@ -1,49 +1,37 @@
+const SAMPLE={"id":"INT-001","status":"PUBLIC_PREVIEW","title":"구유에 누이신 구주","range":"누가복음 2:1–20","series":"예수님을 바라보다","excerpt":"오늘 다윗의 고을에 너희를 위해 구원자가 태어나셨다. 그분은 그리스도이신 주님이다.","bible":"https://www.bible.com/ko/bible/142/LUK.2.RNKSV","verses":[{"num":1,"text":"그 무렵 카이사르 아우구스투스에게서 온 세상이 등록하도록 하는 칙령이 나왔다."},{"num":2,"text":"이 첫 등록은 구레뇨가 시리아를 다스릴 때 이루어졌다."},{"num":3,"text":"그래서 모든 사람이 등록하려고 각각 자기 고을로 갔다."},{"num":4,"text":"요셉도 다윗의 집안과 가문에 속했기 때문에 갈릴리의 나사렛에서 유대에 있는 다윗의 고을 베들레헴으로 올라갔다."},{"num":5,"text":"그는 자기와 약혼한, 임신 중인 마리아와 함께 등록하려고 했다."},{"num":6,"text":"그들이 거기 머무는 동안 마리아가 아이를 낳을 날이 찼다."},{"num":7,"text":"마리아는 맏아들을 낳아 포대기로 싸서 구유에 눕혔다. 그들이 묵는 곳에는 그들을 위한 자리가 없었기 때문이다."},{"num":8,"text":"그 지역에는 목자들이 들에서 지내며 밤중에 양 떼를 지키고 있었다."},{"num":9,"text":"주님의 천사가 그들 곁에 서고 주님의 영광이 그들 주위를 비추자 그들은 크게 두려워했다."},{"num":10,"text":"천사가 그들에게 말했다. “두려워하지 마라. 보라, 내가 온 백성에게 큰 기쁨이 될 좋은 소식을 너희에게 전한다."},{"num":11,"text":"오늘 다윗의 고을에 너희를 위해 구원자가 태어나셨다. 그분은 그리스도이신 주님이다."},{"num":12,"text":"너희에게 줄 표징은 이것이다. 포대기에 싸여 구유에 누워 있는 아기를 발견할 것이다.”"},{"num":13,"text":"갑자기 그 천사와 함께 많은 하늘의 군대가 나타나 하나님을 찬양하며 말했다."},{"num":14,"text":"“지극히 높은 곳에서는 하나님께 영광, 땅에서는 하나님이 기뻐하시는 사람들 가운데 평화.”"},{"num":15,"text":"천사들이 그들을 떠나 하늘로 올라간 뒤, 목자들은 서로 말했다. “베들레헴까지 가서 주님께서 우리에게 알려 주신 이 일을 보자.”"},{"num":16,"text":"그들은 서둘러 가서 마리아와 요셉과 구유에 누워 있는 아기를 찾아냈다."},{"num":17,"text":"아기를 보고 나서 그들은 이 아기에 관해 자신들에게 들려온 말씀을 알렸다."},{"num":18,"text":"목자들이 전한 말을 들은 사람들은 모두 놀랐다."},{"num":19,"text":"그러나 마리아는 이 모든 말을 마음에 간직하고 곰곰이 되새겼다."},{"num":20,"text":"목자들은 자기들이 듣고 본 모든 일이 자신들에게 알려진 그대로였으므로 하나님께 영광을 돌리고 찬양하며 돌아갔다."}],"sections":[{"title":"배경과 앞뒤 문맥","paragraphs":["누가복음 1장은 예수님이 태어나시기 전에 천사가 마리아에게 전한 말씀과 세례 요한의 탄생을 소개합니다. 2장에서는 로마 황제의 등록 명령 속에서 요셉과 마리아가 베들레헴에 머무는 동안 예수님이 태어나십니다. 이어 목자들이 천사의 소식을 듣고 아기를 찾아갑니다. 다음 단락(2:21–40)은 아기의 이름을 짓고 성전에 데려갔을 때 시므온과 안나가 증언하는 장면입니다."]},{"title":"현장에서 예수님을 바라보기","paragraphs":["누가는 화려한 궁궐이나 왕의 행렬을 묘사하지 않습니다. 요셉과 마리아가 베들레헴에 있을 때 아이가 태어나고, 마리아는 그를 포대기로 싸서 구유에 눕힙니다. 곁에 있는 목자들은 밤에 양을 지키는 사람들입니다. 그런데 하늘의 천사는 바로 그들에게 다윗의 고을에 태어난 아기가 “구원자, 그리스도, 주님”이라고 선포합니다. 목자들은 그 말을 듣고 서둘러 아기를 찾아가며, 들은 것을 사람들에게 전하고 하나님을 찬양하며 돌아갑니다.","예수님의 출생은 초라한 장면만을 보여 주는 이야기가 아닙니다. 구유에 누인 아기가 바로 하나님이 보내신 구원자라는 놀라운 대조가 핵심입니다. 이 장면에는 아직 예수님의 직접적인 말씀이나 행동이 기록되지 않습니다. 그러나 이 아기가 누구신지에 대한 천사의 선언과, 그분을 찾아온 목자들의 반응은 이후 예수님의 생애를 어떻게 바라보아야 하는지 알려 줍니다."]},{"title":"중요한 절","paragraphs":["7절 — “그들이 묵는 곳에 자리가 없었다.” 원문 κατάλυμα는 숙소·머무는 장소를 가리키며, 반드시 오늘날의 여관이나 객실이라고 단정할 수 없습니다. 본문에는 냉정한 여관 주인과의 대화가 나오지 않습니다. 분명한 사실은 아기가 구유에 누였다는 것입니다.","11–12절 — “구원자, 그리스도, 주님.” 천사의 선언은 태어난 아기의 정체성을 밝힙니다. 구유는 그 아기를 알아볼 표징입니다. 구유 자체를 가난한 사람에게만 구원이 온다는 증거로 확대할 필요는 없습니다.","14절 — “기뻐하시는 사람들 가운데 평화.” 본문은 땅의 모든 갈등이 즉시 사라졌다고 말하지 않습니다. 하나님의 구원과 호의 안에 있는 평화를 선포합니다."]},{"title":"신앙의 선배들에게 배우기","paragraphs":["존 파이퍼는 설교 《A Savior Is Born: Glory to God, Peace to Man》(2011)에서 구원자의 탄생이 실제 역사 속 특정한 때와 장소에서 일어났다는 점을 강조합니다. 또한 천사들의 찬송을 따라, 이 사건의 목적이 하나님의 영광과 그분이 베푸시는 참된 평화에 연결되어 있음을 설명합니다. 이 해석은 본문의 선포를 더 깊게 보는 데 도움이 되지만, 누가가 기록하지 않은 출생 현장의 세부 사항을 보충하는 근거로 사용하지 않습니다.","출처: John Piper, Desiring God, 2011-12-24","https://www.desiringgod.org/messages/a-savior-is-born-glory-to-god-peace-to-man"]},{"title":"묵상 질문","paragraphs":["1. 구유에 누운 아기에게 “구원자이며 주님”이라는 이름이 주어졌을 때, 나는 예수님을 어떤 눈으로 바라보게 됩니까?","2. 목자들이 들은 말씀을 확인하고 하나님을 찬양한 모습에서 나는 무엇을 배우고 싶습니까?"]},{"title":"기도","paragraphs":["주 예수님, 사람의 눈에 작게 보이는 장면 속에도 구원자로 오신 주님을 알아보게 하소서. 주님에 관한 말씀을 가볍게 지나치지 않고 마음에 간직하며 찬양하게 하소서. 아멘."]},{"title":"본문 대조 및 검수 주의","paragraphs":["그리스어: https://biblia.com/bible/sblgnt/luke/2/1-20","κατάλυμα(2:7)의 공간 유형은 학계에서 해석이 다릅니다. 구레뇨와 인구 등록의 역사적 연대에도 논의가 있어, 정확한 연대를 단정하지 않았습니다. 마태복음의 출생·동방박사 이야기와 사건 연대의 세부 연결을 단정하지 않습니다."]}]};
 (() => {
-"use strict";
-const root = document.getElementById("app");
-const TRACKS = {JES:["예수님을 바라보다","예수님의 삶과 말씀"], ACT:["지금도 일하시는 주님","성령과 교회"], PSA:["시편으로 기도하다","기도와 기다림"]};
-const esc = value => String(value ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-let feed = {published:[],dailySchedule:[]}, tab = new URLSearchParams(location.search).has("session")?"reader":"today", track = "JES", loading = true, failure=false;
-const requestedId = () => new URLSearchParams(location.search).get("session");
-const byId = id => feed.published.find(x => x.session_id === id && x.status==="PUBLISHED");
-function nyDate() { const parts = new Intl.DateTimeFormat("en-US",{timeZone:"America/New_York",year:"numeric",month:"2-digit",day:"2-digit"}).formatToParts(new Date()); const get=k=>parts.find(p=>p.type===k)?.value;return [get("year"),get("month"),get("day")].join("-"); }
-function current() {const date=nyDate();const day=feed.dailySchedule.find(x=>x.date===date && x.plan_id==="JES"&&x.publication_status==="PUBLISHED");return day?byId(day.session_id):null;}
-function linkTo(id) { history.pushState({id},"","?session="+encodeURIComponent(id));tab="reader";render();window.scrollTo(0,0); }
-function navTo(id){history.pushState({tab:id},"",location.pathname);tab=id;render();window.scrollTo(0,0);}
-function markup(p) {
-const label='<div class="publication-tags"><span class="status">시범 공개 · 실제 발행 원고</span> <span class="small-label">'+esc(p.book_passage)+'</span></div>';
-const readBtn='<button class="read-btn" data-read="'+esc(p.session_id)+'">전체 본문과 묵상 읽기</button>';
-return '<article class="card sample-card">'+label+'<div class="mark">✣</div><h2>'+esc(p.title)+'</h2><p class="highlight-verse">“'+esc(p.widget_excerpt)+'”</p><p class="desc">'+esc(p.key_message)+'</p>'+readBtn+'</article>';
-}
-function reader(p){
-let verseHtml=p.verses.map(v=>'<div class="verse-row"><span class="verse-number">'+esc(v.verse)+'</span><p>'+esc(v.text)+'</p></div>').join("");
-let secHtml=p.sections.map(s=>'<section class="reading-section"><h2>'+esc(s.heading)+'</h2>'+(s.paragraphs||[]).map(x=>'<p>'+esc(x)+'</p>').join('')+'</section>').join('');
-return '<div class="reader-top"><button class="back-btn" data-nav="library">← 라이브러리</button><span class="status">시범 공개 · INT-001</span></div><article class="reading"><div class="eyebrow">'+esc(p.book_passage)+' · 자체 직역</div><h1>'+esc(p.title)+'</h1><p class="desc">신약 그리스어 원문을 바탕으로 자체 직역한 본문이며 공인 번역본이 아닙니다.</p><div class="reader-actions"><a href="'+esc(p.bible_url)+'" target="_blank" rel="noopener noreferrer">성경 앱에서 보기</a></div><section class="scripture"><h2>성경 본문 · 전체 '+p.verses.length+'절</h2>'+verseHtml+'</section>'+secHtml+'<p class="footer-note">이 원고는 사용자 승인으로 한 편만 공개한 시험판입니다.</p></article>';
-}
-function navButtons() {return [["today","오늘의 묵상"],["library","말씀 라이브러리"],["settings","안내"]].map(([id,title])=>'<button data-nav="'+id+'" class="'+(tab===id?"active":"")+'">'+title+'</button>').join("");}
-function render(){
-let content="",heading="오늘, 말씀 앞에";
-if(tab==="reader") {
-const target=byId(requestedId());
-heading="전체 묵상";
-content=target?reader(target):'<div class="card"><h2>아직 공개되지 않은 본문입니다</h2><p>승인된 회차만 읽을 수 있습니다.</p><button class="read-btn" data-nav="library">라이브러리로 돌아가기</button></div>';
-} else if(tab==="today") {
-const p=current();
-content=loading?'<div class="card"><p>발행 자료를 확인하고 있습니다…</p></div>':p?markup(p):'<div class="card"><span class="status">발행된 오늘의 회차 없음</span><h2>오늘 배정된 말씀이 없습니다</h2><p>정식 날짜별 일정은 아직 시작하지 않았습니다. 라이브러리에서 공개된 시범 원고를 읽을 수 있습니다.</p><button class="read-btn" data-nav="library">시범 묵상 찾아보기</button></div>';
-} else if(tab==="library") {
-heading="말씀 라이브러리";
-const tr=Object.entries(TRACKS).map(([id,x])=>'<button class="track '+(track===id?"active":"")+'" data-track="'+id+'"><strong>'+esc(x[0])+'</strong><small>'+esc(x[1])+'</small></button>').join("");
-const items=feed.published.filter(p=>p.plan_id===track);
-content='<div class="tracks">'+tr+'</div>'+(items.length?items.map(markup).join(""):'<div class="card"><h2>아직 공개된 묵상이 없습니다</h2><p>이 트랙의 원고는 검수 중입니다.</p></div>');
-} else { heading="이용 안내";content='<div class="card"><h2>매일 말씀 · 시험 운영</h2><p>예수님을 바라보는 JES를 기본 진도로 운영하고 ACT·PSA는 자유롭게 읽을 수 있습니다. 현재 한 편만 시범 공개했으며 다음 회차와 자동 일정은 시작하지 않았습니다.</p><p>아이폰은 Scriptable, 갤럭시는 KWGT로 별도 위젯을 만들 수 있습니다. 새 날짜에 자동으로 변경되는 기능은 추후 게시 일정이 정해진 후 연결됩니다.</p><p><a href="https://github.com/philojc/daily-word-qt/tree/main/widgets" target="_blank" rel="noopener noreferrer">위젯 연결 안내</a></p></div>';}
-const nav=navButtons();
-root.innerHTML='<div class="layout"><aside class="side"><div class="brand">✣ 매일 말씀</div><div class="sub">DAILY DEVOTION</div><nav class="nav">'+nav+'</nav></aside><main class="main"><div class="eyebrow">매일 말씀 / DAILY DEVOTION</div>'+(tab==="reader"?"":'<h1 class="hero">'+heading+'</h1><p class="desc">예수님을 알아가고, 말씀으로 하나님께 기도하는 시간.</p>')+content+'<p class="foot">한 편만 시험 발행 · 나머지 원고는 비공개</p></main><nav class="bottom">'+nav+'</nav></div>';
-}
-root.addEventListener("click",e=>{const b=e.target.closest("[data-nav],[data-track],[data-read]");if(!b)return;if(b.dataset.track){track=b.dataset.track;render();} else if(b.dataset.read){linkTo(b.dataset.read);} else if(b.dataset.nav){navTo(b.dataset.nav);}});
-window.addEventListener("popstate",()=>{tab=new URLSearchParams(location.search).has("session")?"reader":"today";render();});
-fetch("./data/publications.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("HTTP "+r.status);return r.json()}).then(d=>{
-if(d?.schemaVersion!==1||!Array.isArray(d.published)||!Array.isArray(d.dailySchedule))throw Error("Invalid feed");
-feed={published:d.published.filter(p=>p?.status==="PUBLISHED"&&Array.isArray(p.verses)&&Array.isArray(p.sections)),dailySchedule:d.dailySchedule.filter(x=>x?.publication_status==="PUBLISHED")};
-}).catch(()=>{failure=true;}).finally(()=>{loading=false;render();});
-render();
+  "use strict";
+  const root = document.getElementById("app");
+  const escapeHtml = x => String(x??"").replace(/[&<>"']/g, ch => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]));
+  let view = "reading";
+  let fontSize = Number(localStorage.getItem("qt_fontsize")||"16");
+  if(!Number.isFinite(fontSize)||fontSize<14||fontSize>23)fontSize=16;
+  const readKey="qt_read_INT-001";
+  const isRead=()=>localStorage.getItem(readKey)==="yes";
+  const bar=()=>'<header class="qt-top"><button class="qt-logo" data-view="reading">✣ <strong>매일 말씀</strong></button><span>DAILY DEVOTION</span><button class="qt-menu" data-view="library" aria-label="라이브러리">☰</button></header>';
+  const sanitizePara=p=>{
+    const s=String(p).trim();
+    if(/^https?:\/\/\S+$/.test(s)){const safe=escapeHtml(s);return '<p><a class="qt-source" href="'+safe+'" target="_blank" rel="noopener noreferrer">원문 자료 열기 ↗</a></p>';}
+    return '<p>'+escapeHtml(s)+'</p>';
+  };
+  function devotional(){
+    const p=SAMPLE;
+    const verseMarkup=p.verses.map(v=>'<p class="qt-verse"'+(v.num===11?' id="key-verse"':'')+'><sup>'+v.num+'</sup><span>'+escapeHtml(v.text)+'</span></p>').join("");
+    const sectionMarkup=p.sections.map((s,i)=>'<section class="qt-commentary" id="qt-section-'+i+'"><div class="qt-section-kicker">묵상 '+String(i+1).padStart(2,"0")+'</div><h2>'+escapeHtml(s.title)+'</h2>'+s.paragraphs.map(sanitizePara).join("")+'</section>').join("");
+    return bar()+'<main class="qt-reader"><div class="qt-intro"><p class="qt-eyebrow">예수님을 바라보다 <span>· 도입편 01</span></p><span class="qt-preview">한 편 공개 미리보기 · 정식 일정 미시작</span><h1>'+escapeHtml(p.title)+'</h1><p class="qt-meta">'+escapeHtml(p.range)+' <span>·</span> 20절</p><div class="qt-excerpt">“'+escapeHtml(p.excerpt)+'”<div>누가복음 2:11 · 자체 직역</div></div><div class="qt-jumps"><a href="#qt-scripture">본문 읽기 ↓</a><a href="#qt-section-0">해설 보기 ↓</a></div></div><div class="qt-reader-tools"><span>읽기 편한 글자 크기</span><div><button data-size="-1" aria-label="글씨 작게">A−</button><span>'+fontSize+'</span><button data-size="1" aria-label="글씨 크게">A+</button></div></div><section class="qt-scripture" id="qt-scripture"><div class="qt-section-kicker">성경 본문 · 그리스어 원문 기반 자체 직역</div><h2>'+escapeHtml(p.range)+'</h2><p class="qt-note">공인 번역본이 아닌 자체 직역입니다. 아래 20절 전체를 읽을 수 있습니다.</p><div class="qt-verses">'+verseMarkup+'</div><a class="qt-outlink" target="_blank" rel="noopener noreferrer" href="'+escapeHtml(p.bible)+'">성경 앱에서 비교하여 읽기 ↗</a></section><div class="qt-sections">'+sectionMarkup+'</div><div class="qt-end"><div class="qt-end-title">오늘의 묵상을 마쳤나요?</div><p>표시한 읽기 기록은 이 기기에만 저장됩니다.</p><button data-read="1">'+(isRead()?'✓ 읽음 표시됨':'오늘 묵상 읽음 표시')+'</button><p class="qt-end-small">다음 회차는 검수 후 제공됩니다. 추가 원고를 자동 공개하지 않습니다.</p></div></main>'+foot();
+  }
+  function library(){
+    return bar()+'<main class="qt-library"><p class="qt-eyebrow">매일 말씀</p><h1>묵상 라이브러리</h1><p>현재 읽을 수 있는 공개 미리보기는 1편입니다.</p><button class="qt-library-item" data-view="reading"><span class="qt-tag">JES · 도입편 01</span><strong>구유에 누이신 구주</strong><small>누가복음 2:1–20 · 본문 전문과 강해</small><span>묵상 읽기 →</span></button><div class="qt-library-soon"><strong>곧 만날 트랙</strong><p>지금도 일하시는 주님 · 시편으로 기도하다</p><small>미발행 원고는 공개하지 않습니다.</small></div></main>'+foot();
+  }
+  function foot(){return '<nav class="qt-bottom"><button data-view="reading" class="'+(view==="reading"?"selected":"")+'">✣ 묵상 읽기</button><button data-view="library" class="'+(view==="library"?"selected":"")+'">▤ 라이브러리</button></nav>';}
+  function render(){root.style.setProperty("--qt-font",fontSize+"px");root.innerHTML=view==="library"?library():devotional();}
+  root.addEventListener("click",e=>{
+    const item=e.target.closest("[data-view],[data-size],[data-read]");
+    if(!item)return;
+    if(item.dataset.view){view=item.dataset.view;render();window.scrollTo(0,0);}
+    else if(item.dataset.size){fontSize=Math.max(14,Math.min(23,fontSize+Number(item.dataset.size)));localStorage.setItem("qt_fontsize",String(fontSize));render();}
+    else if(item.dataset.read){localStorage.setItem(readKey,isRead()?"no":"yes");render();window.scrollTo(0,document.documentElement.scrollHeight);}
+  });
+  if(new URLSearchParams(location.search).has("library"))view="library";
+  render();
 })();

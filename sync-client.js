@@ -73,6 +73,7 @@
     const code=String(document.getElementById("dw-sync-code")?.value||"").trim().toUpperCase().replace(/[\s-]/g,"");
     if(!name || !/^[A-Z2-9]{16,32}$/.test(code))return setStatus("이름과 16~32자리 개인 코드를 확인해 주세요.");
     if(op==="create"&&!confirm("이 이름과 코드로 새 동기화 기록을 만드시겠습니까? 기존 기기 기록은 자동으로 합치지 않습니다."))return;
+    const previous=api.current();
     setStatus("서버에 연결하는 중입니다…");
     try{
       const result=await call({op,name,code});
@@ -81,6 +82,15 @@
       credentials[id]={name:result.name,code};
       store(STORE,credentials);
       setStatus("서버와 연결되었습니다. "+(op==="create"?"개인 코드를 안전하게 보관하세요.":"읽기 기록을 불러왔습니다."));
+      if(op==="create" && ((previous.completed||[]).length||(previous.favorites||[]).length||previous.last)){
+        const migrate=confirm("이 기기에 기존 읽기 기록이 있습니다. 새 동기화 프로필에 복사하시겠습니까?");
+        if(migrate){
+          for(const v of previous.completed||[])window.DWOnLocalChange({kind:"mark",sessionId:v,value:true});
+          for(const v of previous.favorites||[])window.DWOnLocalChange({kind:"favorite",sessionId:v,value:true});
+          for(const [track,sessionId] of Object.entries(previous.lastByTrack||{}))
+            window.DWOnLocalChange({kind:"open",track,sessionId});
+        }
+      }
       flush();
     }catch(err){setStatus("연결되지 않았습니다: "+err.message);}
   }
@@ -127,6 +137,7 @@
     else if(cmd==="disconnect"){if(!confirm("이 기기에서만 동기화 코드를 지우시겠습니까? 서버의 읽기 기록은 유지됩니다."))return;delete credentials[api.active()];store(STORE,credentials);setStatus("이 기기의 자동 연결을 해제했습니다.");}
   });
   window.addEventListener("online",()=>{if(activeCred())flush();});
+  document.addEventListener("visibilitychange",()=>{if(!document.hidden&&activeCred())refresh();});
   render();
   if(endpoint&&activeCred())refresh();
 })();

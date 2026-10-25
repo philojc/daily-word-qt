@@ -8,12 +8,11 @@
 
 ## 최초 1회 설정 (Google 계정 소유자가 진행)
 1. 위 개인 기록용 Google Sheet를 열고 **확장 프로그램 → Apps Script**를 클릭합니다.
-2. 편집기에 있는 `Code.gs` 내용을 [Code.gs](./Code.gs) 내용으로 교체합니다.
-3. 왼쪽 **+ → HTML**에서 이름이 `Bridge`인 HTML 파일을 만들고 [Bridge.html](./Bridge.html) 내용을 붙여넣습니다.
-4. **배포 → 새 배포 → 웹 앱**에서 실행 사용자는 `나`, 접근 권한은 `모든 사용자`로 선택합니다. 이 방법은 로그인 없는 접속을 위해 필요합니다.
-5. 사용 권한 승인 후 표시되는 `https://script.google.com/macros/s/.../exec` 주소를 복사합니다. **개인 이름은 전달할 필요가 없습니다.**
-6. GitHub [sync-config.js](../sync-config.js)의 `window.DW_SYNC_ENDPOINT = "";` 따옴표에 위 URL을 붙여넣고 저장합니다. GitHub Pages가 다시 배포됩니다.
-7. 웹앱 [매일 말씀](https://philojc.github.io/daily-word-qt/)의 **내 기록**에서 이름을 입력한 뒤, 새 사용자면 **새 이름 등록**, 기존 사용자면 **기존 이름으로 이어 읽기**를 선택합니다.
+2. 기본 `Code.gs`의 내용을 전부 지운 다음 [Code.gs](./Code.gs) **파일 하나만** 붙여넣고 저장합니다. HTML 파일을 별도로 만들 필요가 없습니다.
+3. **배포 → 새 배포 → 웹 앱**에서 실행 사용자는 `나`, 접근 권한은 `모든 사용자`로 선택합니다. 이 방법은 로그인 없는 접속을 위해 필요합니다.
+4. 사용 권한 승인 후 표시되는 `https://script.google.com/macros/s/.../exec` 주소를 복사합니다. **개인 이름은 전달할 필요가 없습니다.**
+5. GitHub [sync-config.js](../sync-config.js)의 `window.DW_SYNC_ENDPOINT = "";` 따옴표에 위 URL을 붙여넣고 저장합니다. GitHub Pages가 다시 배포됩니다.
+6. 웹앱 [매일 말씀](https://philojc.github.io/daily-word-qt/)의 **내 기록**에서 이름을 입력한 뒤, 새 사용자면 **새 이름 등록**, 기존 사용자면 **기존 이름으로 이어 읽기**를 선택합니다.
 
 ## 사용 방식
 - 같은 이름으로 새로 등록할 때 서버가 **대소문자/공백/한글 정규화를 반영하여 중복을 확인**하고 거절합니다.

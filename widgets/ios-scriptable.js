@@ -15,7 +15,7 @@ try {
   const req = new Request(DATA_URL + "?t=" + Math.floor(Date.now()/3600000));
   req.timeoutInterval = 10;
   d = await req.loadJSON();
-  if (!d || d.session_id !== "INT-001" || d.status !== "PUBLISHED" || d.is_pilot !== true) {
+  if (!d || d.session_id !== "INT-001" || d.status !== "PREVIEW" || d.is_pilot !== true) {
     throw new Error("Publication not approved");
   }
 } catch (err) {
@@ -28,7 +28,7 @@ try {
 }
 
 if (d) {
-  const tag = w.addText("시범 공개 · " + (d.book_passage || "누가복음 2:1–20"));
+  const tag = w.addText("위젯 연결 테스트 · " + (d.book_passage || "누가복음 2:1–20"));
   tag.font = Font.mediumSystemFont(10);
   tag.textColor = new Color("#758376");
   w.addSpacer(5);
@@ -45,7 +45,7 @@ if (d) {
   verse.minimumScaleFactor = 0.8;
   w.url = d.url;
   w.addSpacer();
-  const foot = w.addText("눌러서 본문과 묵상 읽기");
+  const foot = w.addText("눌러서 Google Docs 원고 보기");
   foot.font = Font.mediumSystemFont(10);
   foot.textColor = new Color("#7F947F");
 }

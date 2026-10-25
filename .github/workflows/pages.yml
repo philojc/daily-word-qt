@@ -35,7 +35,7 @@ jobs:
           if any(Path(x).exists() for x in forbidden):
               raise SystemExit("Deployment blocked: unapproved draft or preview file found.")
           allowed = ["index.html", "style.css", "app.js", "manifest.webmanifest",
-                     "assets/icon.svg", "data/publications.json"]
+                     "assets/icon.svg", "data/publications.json", "sync-client.js", "sync-config.js"]
           for x in allowed:
               if not Path(x).is_file():
                   raise SystemExit(f"Missing required file: {x}")

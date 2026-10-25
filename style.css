@@ -190,3 +190,17 @@ button{cursor:pointer}
 .q-toplink{display:none}
 .q-pager strong{font-size:12px}
 }
+
+
+/* Optional login-free sync UI; cloud connection is disabled until configured. */
+.q-track-resume{font-size:11px;margin-top:9px;color:#4f775b}
+.dw-panel{border-color:#b9d2bf;background:#fafff8}
+.dw-panel>p:first-of-type{line-height:1.75}
+.dw-fields{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:17px 0}
+.dw-fields label{display:flex;flex-direction:column;gap:7px;font-size:12px;font-weight:700;color:#42684d}
+.dw-fields input{width:100%;padding:12px;border:1px solid #cbd9ca;background:white;border-radius:9px;font-size:14px;color:#354b3a}
+.dw-actions{display:flex;gap:9px;flex-wrap:wrap;margin:14px 0}
+.dw-btn,.dw-secondary{border:1px solid #a8c7b0;border-radius:9px;padding:11px 14px;font-size:12px;font-weight:700;cursor:pointer}
+.dw-btn{background:#356449;color:white;border-color:#356449}
+.dw-secondary{background:#edf5ec;color:#3c6847;margin:0 8px 8px 0}
+@media(max-width:650px){.dw-fields{grid-template-columns:1fr}.dw-actions{flex-direction:column}.dw-actions button{width:100%}}

@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>매일 말씀 · 기록 동기화</title>
+</head>
+<body style="margin:0;background:transparent">
+<script>
+(function () {
+  "use strict";
+  const PARENT = "https://philojc.github.io";
+  const TYPE_REQUEST = "DW_SYNC_REQUEST";
+  const TYPE_RESPONSE = "DW_SYNC_RESPONSE";
+  window.addEventListener("message", function (event) {
+    if (event.origin !== PARENT || event.source !== window.parent) return;
+    const msg = event.data;
+    if (!msg || msg.type !== TYPE_REQUEST ||
+        !Number.isSafeInteger(msg.id) || msg.id < 1 || msg.id > 100000000) return;
+    const respond = function (result, error) {
+      window.parent.postMessage({
+        type: TYPE_RESPONSE, id: msg.id,
+        result: result || null, error: error || null
+      }, PARENT);
+    };
+    try {
+      google.script.run
+        .withSuccessHandler(function (result) { respond(result, null); })
+        .withFailureHandler(function (err) {
+          respond(null, String(err && err.message || "Server error").slice(0, 250));
+        })
+        .syncRpc(msg.request || {});
+    } catch (err) {
+      respond(null, String(err.message || "Bridge error").slice(0, 250));
+    }
+  });
+  window.parent.postMessage({type:"DW_SYNC_READY"}, PARENT);
+})();
+</script>
+</body>
+</html>

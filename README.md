@@ -1,9 +1,11 @@
-# 매일 말씀 · 공개 웹앱 (미발행)
+# 매일 말씀 — 웹앱 읽기 우선 버전
 
-이 저장소의 공개 파일에는 묵상 초안이 없습니다. `data/publications.json`의 `published`와 `dailySchedule`은 비어 있습니다.
+https://philojc.github.io/daily-word-qt/
 
-## 배포
-GitHub 저장소 Settings → Pages → Build and deployment → **Source: GitHub Actions** 선택. Actions의 **Deploy empty Daily Word** 워크플로 성공 후 Pages에서 제공하는 실제 URL을 확인하세요.
+2026-10-25 기준, 웹앱은 누가복음 2:1–20 묵상 원고 INT-001 **한 편을 공개 미리보기**로 표시합니다. 성경 자체 직역 20절, 배경, 해설, 중요 절, 설교 요약, 묵상 질문과 기도를 읽을 수 있습니다.
 
-### 안전
-새 게시 데이터를 추가하면 배포 검사에 실패하게 설정했습니다. 원고를 외부에 발행하려면 별도 승인 및 검수 후 배포 정책을 개정해야 합니다.
+나머지 원고는 공개하지 않았습니다. 공식 DailySchedule 및 data/publications.json의 published 배열은 여전히 비어 있으며, 매일 자동으로 다음 본문을 발행하는 기능도 시작하지 않았습니다.
+
+홈 화면 말씀 한 줄 위젯 작업은 우선순위를 낮추었습니다. 웹앱 자체의 본문·해설 가독성과 이동 경험을 우선 개발합니다.
+
+원고의 정식 발행과 날짜 배정은 Google Sheets/Docs에서 검토 후 별도로 진행합니다.

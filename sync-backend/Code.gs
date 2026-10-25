@@ -17,7 +17,7 @@ const DW_CONFIG = Object.freeze({
 const DW_TRACKS = Object.freeze(['JES','ACT','EPI','PSA','OTN']);
 
 function doGet() {
-  return HtmlService.createHtmlOutputFromFile('Bridge')
+  return HtmlService.createHtmlOutput("<!doctype html>\n<html>\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">\n  <title>매일 말씀 · 기록 동기화</title>\n</head>\n<body style=\"margin:0;background:transparent\">\n<script>\n(function () {\n  \"use strict\";\n  const PARENT = \"https://philojc.github.io\";\n  const TYPE_REQUEST = \"DW_SYNC_REQUEST\";\n  const TYPE_RESPONSE = \"DW_SYNC_RESPONSE\";\n  window.addEventListener(\"message\", function (event) {\n    if (event.origin !== PARENT || event.source !== window.parent) return;\n    const msg = event.data;\n    if (!msg || msg.type !== TYPE_REQUEST ||\n        !Number.isSafeInteger(msg.id) || msg.id < 1 || msg.id > 100000000) return;\n    const respond = function (result, error) {\n      window.parent.postMessage({\n        type: TYPE_RESPONSE, id: msg.id,\n        result: result || null, error: error || null\n      }, PARENT);\n    };\n    try {\n      google.script.run\n        .withSuccessHandler(function (result) { respond(result, null); })\n        .withFailureHandler(function (err) {\n          respond(null, String(err && err.message || \"Server error\").slice(0, 250));\n        })\n        .syncRpc(msg.request || {});\n    } catch (err) {\n      respond(null, String(err.message || \"Bridge error\").slice(0, 250));\n    }\n  });\n  window.parent.postMessage({type:\"DW_SYNC_READY\"}, PARENT);\n})();\n</script>\n</body>\n</html>")
     .setXFrameOptionsMode(HtmlService.XFrameOptionsMode.ALLOWALL)
     .setTitle('매일 말씀 · 이름으로 진도 이어읽기');
 }

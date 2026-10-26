@@ -9,7 +9,7 @@
  * 서버 원본 코드가 공개되어도 연결된 Google Sheet는 공개하지 마세요.
  */
 const DW_CONFIG = Object.freeze({
-  SPREADSHEET_ID: '1E9j-c_wyTlv-FTPPOEKtSeTK-w9L2srQ5MvISIb_oH8',
+  DB_ID_PROPERTY: 'DAILY_WORD_SYNC_SHEET_ID',
   TAB: 'Profiles',
   MAX_USERS: 30,
   MAX_READINGS: 5000
@@ -31,13 +31,12 @@ function syncRpc(req) {
   const name=normalizeName_(req.name);
   const canonical=canonicalName_(name);
   const id=keyHash_(canonical);
-  const write=op==='create'||op==='apply';
-  const lock=write?LockService.getScriptLock():null;
+  // Lock all operations: first request provisions the owner-accessible sheet.
+  const lock=LockService.getScriptLock();
   if(lock&&!lock.tryLock(20000))throw new Error('서버가 사용 중입니다. 다시 시도해 주세요.');
 
   try{
-    const sheet=SpreadsheetApp.openById(DW_CONFIG.SPREADSHEET_ID).getSheetByName(DW_CONFIG.TAB);
-    if(!sheet)throw new Error('Profiles sheet missing');
+    const sheet=getProfilesSheet_();
     const rows=sheet.getDataRange().getValues();
     let index=-1;
     for(let i=1;i<rows.length;i++){
@@ -62,6 +61,33 @@ function syncRpc(req) {
     sheet.getRange(index+1,3,1,2).setValues([[JSON.stringify(state),now]]);
     return result_(String(row[1]),state,now);
   }finally{if(lock)lock.releaseLock();}
+}
+
+/**
+ * Initialize a private reading sheet inside the account that owns this script.
+ * No pre-existing Google Sheet link is required.
+ * ScriptProperties records its ID for subsequent users and requests.
+ * Keep this spreadsheet private; the web app accesses it as the deployer.
+ */
+function getProfilesSheet_(){
+  const properties=PropertiesService.getScriptProperties();
+  const id=properties.getProperty(DW_CONFIG.DB_ID_PROPERTY);
+  if(id){
+    const existing=SpreadsheetApp.openById(id);
+    const sheet=existing.getSheetByName(DW_CONFIG.TAB);
+    if(!sheet)throw new Error('기록용 시트의 Profiles 탭을 찾지 못했습니다.');
+    return sheet;
+  }
+  const book=SpreadsheetApp.create('매일 말씀 | 개인별 성경 읽기 기록 (자동 생성)');
+  const sheet=book.getSheets()[0];
+  sheet.setName(DW_CONFIG.TAB);
+  sheet.getRange(1,1,1,5).setValues([[
+    'profile_name_hash','display_name','state_json','updated_at','created_at'
+  ]]);
+  sheet.setFrozenRows(1);
+  // Save the newly created sheet after it is initialized successfully.
+  properties.setProperty(DW_CONFIG.DB_ID_PROPERTY,book.getId());
+  return sheet;
 }
 
 function normalizeName_(value){

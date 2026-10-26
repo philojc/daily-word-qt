@@ -7,7 +7,7 @@ const read=k=>{try{return JSON.parse(localStorage.getItem(k)||"{}")}catch{return
 const save=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v))}catch{}};
 const names=read(STORE),pending=read(QUEUE);
 let frame=null,frameOrigin="",readyPromise=null,readyResolve=null,readyReject=null,idSeq=0,busy=false;
-let status="이름을 입력하고 새로 등록하거나 기존 기록을 불러오세요.";
+let status="내 ID를 입력하고 새로 등록하거나 기존 기록을 불러오세요.";
 const waiting=new Map();
 const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const connected=()=>names[api.active()]||null;
@@ -30,7 +30,7 @@ window.addEventListener("message",ev=>{
   if(data.type!=="DW_SYNC_RESPONSE")return;
   const item=waiting.get(data.id);if(!item)return;
   waiting.delete(data.id);clearTimeout(item.timeout);
-  if(data.error)item.reject(Error(data.error));else item.resolve(data.result);
+  if(data.error)item.reject(Error(String(data.error).replaceAll('이름','ID')));else item.resolve(data.result);
 });
 async function rpc(request){
   await ready();if(!frameOrigin)throw Error("서버 준비 중");
@@ -45,7 +45,7 @@ const notify=s=>{status=s;render();};
 function render(){
   const root=document.getElementById("dw-sync-root");if(!root)return;
   if(!endpoint){
-    root.innerHTML='<div class="q-profile-pane"><strong>이름만으로 기록 이어 읽기</strong><p class="q-tiny">이름만 입력하는 방식으로 준비했습니다. 서버 배포 주소를 아직 연결하지 않아, 현재는 이 기기에 기록이 저장됩니다.</p></div>';
+    root.innerHTML='<div class="q-profile-pane"><strong>내 ID로 기록 이어 읽기</strong><p class="q-tiny">ID만 입력하는 방식으로 준비했습니다. 서버 배포 주소를 아직 연결하지 않아, 현재는 이 기기에 기록이 저장됩니다.</p></div>';
     return;
   }
   const account=connected();
@@ -53,14 +53,14 @@ function render(){
     const n=(pending[api.active()]||[]).length;
     root.innerHTML='<div class="q-profile-pane dw-panel"><strong>기록 연결됨 · '+esc(account.name)+'</strong><p class="q-tiny">'+esc(status)+'</p><p class="q-tiny">서버에 보내지 못한 변경 '+n+'건</p><button class="dw-btn" data-sync="refresh">진도 새로 불러오기</button><button class="dw-secondary" data-sync="retry">미전송 기록 다시 보내기</button><button class="dw-secondary" data-sync="disconnect">이 기기 연결 해제</button></div>';
   }else{
-    root.innerHTML='<div class="q-profile-pane dw-panel"><strong>이름으로 읽던 곳 이어가기</strong><p class="q-tiny">같은 이름을 입력하면 다른 휴대폰에서 읽던 진도를 불러올 수 있습니다. 새 이름을 등록할 때 중복 여부를 자동으로 검사합니다.</p><div class="dw-fields"><label>읽기 이름<input id="dw-sync-name" maxlength="30" autocomplete="nickname" placeholder="예: 준우"/></label></div><div class="dw-actions"><button class="dw-btn" data-sync="load">기존 이름으로 이어 읽기</button><button class="dw-secondary" data-sync="create">새 이름 등록</button></div><p class="q-tiny">'+esc(status)+'</p><p class="q-tiny">※ 별도의 비밀번호가 없습니다. <strong>같은 이름을 아는 사람은 읽기 기록을 보고 수정할 수 있습니다.</strong> 성경 진도 외의 개인 정보는 저장하지 마세요.</p></div>';
+    root.innerHTML='<div class="q-profile-pane dw-panel"><strong>내 ID로 읽던 곳 이어가기</strong><p class="q-tiny">같은 ID를 입력하면 다른 기기에서도 읽던 진도를 불러올 수 있습니다. 새 ID 등록 시 중복 여부를 확인합니다.</p><div class="dw-fields"><label>내 ID<input id="dw-sync-name" maxlength="30" autocomplete="nickname" placeholder="예: reader01"/></label></div><div class="dw-actions"><button class="dw-btn" data-sync="load">기존 ID로 이어 읽기</button><button class="dw-secondary" data-sync="create">새 ID 등록</button></div><p class="q-tiny">'+esc(status)+'</p><p class="q-tiny">※ 별도의 비밀번호가 없습니다. <strong>같은 ID를 아는 사람은 읽기 기록을 보고 수정할 수 있습니다.</strong> 성경 진도 외의 개인 정보는 저장하지 마세요.</p></div>';
   }
 }
 window.DWRenderSync=render;
 function normalizeName(v){return String(v||"").normalize("NFC").trim().replace(/\s+/g," ");}
 async function enter(op){
   const name=normalizeName(document.getElementById("dw-sync-name")?.value);
-  if(!name||name.length>30)return notify("이름을 1~30자로 입력해 주세요.");
+  if(!name||name.length>30)return notify("ID를 1~30자로 입력해 주세요.");
   notify("읽기 기록을 확인하는 중입니다…");
   try{
     const before=api.current();
@@ -69,9 +69,9 @@ async function enter(op){
     const profileId=api.activateCloud(data.name,data.state);
     names[profileId]={name:data.name};
     save(STORE,names);
-    notify(op==="create"?"새 이름으로 등록했습니다.":"기존 기록을 불러왔습니다.");
+    notify(op==="create"?"새 ID로 등록했습니다.":"기존 기록을 불러왔습니다.");
     if(op==="create"&&((before.completed||[]).length||(before.favorites||[]).length||before.last)){
-      if(confirm("이 기기에 기존 읽기 기록이 있습니다. 새 이름의 기록에 복사하시겠습니까?")){
+      if(confirm("이 기기에 기존 읽기 기록이 있습니다. 새 ID의 기록에 복사하시겠습니까?")){
         const actions=[
           ...(before.completed||[]).map(id=>({kind:"mark",sessionId:id,value:true})),
           ...(before.favorites||[]).map(id=>({kind:"favorite",sessionId:id,value:true})),

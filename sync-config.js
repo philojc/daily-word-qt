@@ -1,3 +1,4 @@
-// 이름만 입력하는 읽기 기록 동기화 — 최초 Apps Script 웹 앱 배포 후 /exec 주소를 입력하세요.
-// 빈 문자열인 동안에는 휴대폰/브라우저 내부에만 기록이 저장됩니다.
-window.DW_SYNC_ENDPOINT = "";
+// 매일 말씀: 배포된 Apps Script 기록 동기화 서버
+// 사용자 이름만으로 읽음/즐겨찾기/트랙별 진도를 저장합니다.
+// 이름은 인증이 아니므로 민감한 정보는 저장하지 마세요.
+window.DW_SYNC_ENDPOINT = "https://script.google.com/macros/s/AKfycbwzXP87uCXmTfTV2eFZPdH2Y6UhwWwFgDutNnA5tEGIDI4W3sbQdRDSUBhgji5R_FJy/exec";

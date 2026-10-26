@@ -1,11 +1,11 @@
 /**
- * 매일 말씀 | 이름만으로 읽기 진도 동기화 (가족용)
+ * 매일 말씀 | ID만으로 읽기 진도 동기화 (가족용)
  *
  * Google Sheets / Google Drive 접근 권한을 사용하지 않습니다.
- * Apps Script ScriptProperties에 이름별 읽기 진도를 저장합니다.
+ * Apps Script ScriptProperties에 ID별 읽기 진도를 저장합니다.
  *
- * 보안 주의: 이름은 본인 인증 수단이 아닙니다. 이름을 아는 누구나
- * 그 이름의 완료 기록과 즐겨찾기를 읽거나 바꿀 수 있습니다.
+ * 보안 주의: ID는 본인 인증 수단이 아닙니다. ID를 아는 누구나
+ * 그 ID의 완료 기록과 즐겨찾기를 읽거나 바꿀 수 있습니다.
  * 민감한 개인 메모나 기도문은 저장하지 마세요.
  */
 const DW_CONFIG=Object.freeze({
@@ -20,7 +20,7 @@ const DW_TRACKS=Object.freeze(['JES','ACT','EPI','PSA','OTN']);
 function doGet(){
   return HtmlService.createHtmlOutput(BRIDGE_HTML_)
     .setXFrameOptionsMode(HtmlService.XFrameOptionsMode.ALLOWALL)
-    .setTitle('매일 말씀 | 이름별 읽기 기록');
+    .setTitle('매일 말씀 | ID별 읽기 기록');
 }
 function syncRpc(request){
   const req=request||{},op=String(req.op||'');
@@ -35,14 +35,14 @@ function syncRpc(request){
     const existing=readProfile_(props,key);
     if(op==='check')return{ok:true,exists:!!existing,name};
     if(op==='create'){
-      if(existing)throw Error('이미 사용 중인 이름입니다. 기존 기록을 이어 읽거나 다른 이름을 사용하세요.');
+      if(existing)throw Error('이미 사용 중인 ID입니다. 기존 기록을 이어 읽거나 다른 ID를 사용하세요.');
       const count=props.getKeys().filter(x=>x.startsWith(DW_CONFIG.PREFIX)&&x.endsWith('_meta')).length;
       if(count>=DW_CONFIG.MAX_USERS)throw Error('등록 가능한 이용자 수를 초과했습니다.');
       const state=emptyState_(),time=new Date().toISOString();
       writeProfile_(props,key,{name,state,createdAt:time,updatedAt:time});
       return publicResult_(name,state,time);
     }
-    if(!existing)throw Error('등록되지 않은 이름입니다. 새 이름으로 등록하거나 이름을 확인해 주세요.');
+    if(!existing)throw Error('등록되지 않은 ID입니다. 새 ID로 등록하거나 ID를 확인해 주세요.');
     const state=sanitizeState_(existing.state);
     if(op==='load')return publicResult_(existing.name,state,existing.updatedAt);
     applyChange_(state,req.change);
@@ -54,7 +54,7 @@ function syncRpc(request){
 function normalizeName_(v){
   const name=String(v||'').normalize('NFC').trim().replace(/\s+/g,' ');
   if(name.length<1||name.length>30||!/^[\p{L}\p{N} _.-]+$/u.test(name))
-    throw Error('이름은 1~30자의 한글·영문·숫자로 입력하세요.');
+    throw Error('ID는 1~30자의 한글·영문·숫자로 입력하세요.');
   return name;
 }
 function profileKey_(name){

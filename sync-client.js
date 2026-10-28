@@ -57,6 +57,14 @@ function render(){
   }
 }
 window.DWRenderSync=render;
+window.DWIsCloudProfile=id=>!!names[id];
+window.DWOnProfileDelete=id=>{
+  delete names[id];
+  delete pending[id];
+  save(STORE,names);save(QUEUE,pending);
+  status="기기 내 ID와 동기화 연결 정보를 삭제했습니다. 서버 기록은 그대로 유지됩니다.";
+};
+
 function normalizeName(v){return String(v||"").normalize("NFC").trim().replace(/\s+/g," ");}
 async function enter(op){
   const name=normalizeName(document.getElementById("dw-sync-name")?.value);
@@ -90,13 +98,14 @@ async function flush(){
   if(busy||!account||!q?.length)return;
   busy=true;
   try{
-    while(q.length){
+    while(q.length&&names[profileId]){
       const result=await rpc({op:"apply",name:account.name,change:q[0]});
       if(!result?.ok)throw Error("서버가 저장을 거절했습니다.");
+      if(!names[profileId])break;
       q.shift();save(QUEUE,pending);
-      if(!q.length&&api.active()===profileId)api.activateCloud(account.name,result.state);
+      if(!q.length&&names[profileId]&&api.active()===profileId)api.activateCloud(account.name,result.state);
     }
-    notify("변경 사항이 서버에 저장됐습니다.");
+    if(names[profileId])notify("변경 사항이 서버에 저장됐습니다.");
   }catch(err){notify("기기에는 기록됐지만 서버 동기화가 실패했습니다: "+err.message);}
   finally{busy=false;}
 }

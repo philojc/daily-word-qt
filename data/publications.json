@@ -1,17 +1,8 @@
 {
   "schemaVersion": 1,
   "timezone": "America/New_York",
-  "generatedAt": "2026-10-28T20:00:00Z",
+  "generatedAt": "2026-10-28T21:02:58.868Z",
   "published": [
-    {
-      "session_id": "JES-PILOT-LK05",
-      "plan_id": "JES",
-      "book_passage": "눅 5:1–11",
-      "title": "예수님은 왜 죄인에게 떠나지 않으셨는가?",
-      "doc_url": "https://docs.google.com/document/d/1q50SR-8bb8aqBaPIQNJ6LN-2j7QesfwA28evbS_8kAQ/edit",
-      "published_date": "2026-10-28",
-      "status": "PUBLISHED"
-    },
     {
       "session_id": "ACT-001",
       "plan_id": "ACT",
@@ -19,7 +10,7 @@
       "title": "떠나신 것이 끝이 아닙니다",
       "doc_url": "https://docs.google.com/document/d/1e20rdGLVdxcxAgqXnbveAJFgTeUlTq1M0Dd3uDFbIVA/edit",
       "published_date": "2026-10-28",
-      "status": "PUBLIC_WITH_QA_PENDING",
+      "status": "PUBLISHED",
       "release_batch": "ReleaseBatch70"
     },
     {
@@ -29,7 +20,7 @@
       "title": "하나님의 아들에 관한 복음",
       "doc_url": "https://docs.google.com/document/d/1zbKO59r-PRrEhgcupvkq_CLynYil-mUMPe6ZrsR_j0U/edit",
       "published_date": "2026-10-28",
-      "status": "PUBLIC_WITH_QA_PENDING",
+      "status": "PUBLISHED",
       "release_batch": "ReleaseBatch70"
     },
     {
@@ -39,7 +30,7 @@
       "title": "세례 받으시는 하나님의 아들",
       "doc_url": "https://docs.google.com/document/d/1mHvJDskKPRTwTj2SKhtgnu65wUHY0oVCett0zsgMBn8/edit",
       "published_date": "2026-10-28",
-      "status": "PUBLIC_WITH_QA_PENDING",
+      "status": "PUBLISHED",
       "release_batch": "ReleaseBatch70"
     },
     {
@@ -49,7 +40,7 @@
       "title": "광야에서 신실하신 아들",
       "doc_url": "https://docs.google.com/document/d/1q1bbO5AfCl8PiuG6VivnfAPR_G14HUq6Wt_40MWKMnA/edit",
       "published_date": "2026-10-28",
-      "status": "PUBLIC_WITH_QA_PENDING",
+      "status": "PUBLISHED",
       "release_batch": "ReleaseBatch70"
     },
     {
@@ -59,7 +50,7 @@
       "title": "와서 보라",
       "doc_url": "https://docs.google.com/document/d/1H0JRt2RLXHWax3mgy0-JdRrG7Q3l1_D4vjrXC3vCj3g/edit",
       "published_date": "2026-10-28",
-      "status": "PUBLIC_WITH_QA_PENDING",
+      "status": "PUBLISHED",
       "release_batch": "ReleaseBatch70"
     },
     {
@@ -69,7 +60,7 @@
       "title": "말씀을 붙들고 기다리는 제자들",
       "doc_url": "https://docs.google.com/document/d/1gpHnqdaYMUIMhEjapUWVqERhRCrZdikN2MR5HmSzkeY/edit",
       "published_date": "2026-10-28",
-      "status": "PUBLIC_WITH_QA_PENDING",
+      "status": "PUBLISHED",
       "release_batch": "ReleaseBatch70"
     },
     {
@@ -79,7 +70,7 @@
       "title": "성령이 오신 날",
       "doc_url": "https://docs.google.com/document/d/1F1THtjtqn-tkklilxM2cSrmZk-oWWnwP-vdlPyFfv6A/edit",
       "published_date": "2026-10-28",
-      "status": "PUBLIC_WITH_QA_PENDING",
+      "status": "PUBLISHED",
       "release_batch": "ReleaseBatch70"
     },
     {
@@ -89,7 +80,7 @@
       "title": "부활하신 예수를 주와 그리스도로",
       "doc_url": "https://docs.google.com/document/d/1KC-dWVhPUWUMXn1cxQZoPJXPmii2hSG6tALG-CDqiEc/edit",
       "published_date": "2026-10-28",
-      "status": "PUBLIC_WITH_QA_PENDING",
+      "status": "PUBLISHED",
       "release_batch": "ReleaseBatch70"
     },
     {
@@ -99,7 +90,7 @@
       "title": "복음을 부끄러워하지 않는 이유",
       "doc_url": "https://docs.google.com/document/d/1OdiCFGOii3rFX3RxA2MVdSVkjx_bjdgXE4cJdtbv73Y/edit",
       "published_date": "2026-10-28",
-      "status": "PUBLIC_WITH_QA_PENDING",
+      "status": "PUBLISHED",
       "release_batch": "ReleaseBatch70"
     },
     {
@@ -109,7 +100,7 @@
       "title": "진리를 억누르는 사람",
       "doc_url": "https://docs.google.com/document/d/1ZhVq9L-YCYeEn-QrNSxShNTpSLcESuDyaZZCFSI6ZNU/edit",
       "published_date": "2026-10-28",
-      "status": "PUBLIC_WITH_QA_PENDING",
+      "status": "PUBLISHED",
       "release_batch": "ReleaseBatch70"
     },
     {
@@ -119,7 +110,7 @@
       "title": "하나님의 의로운 심판",
       "doc_url": "https://docs.google.com/document/d/1CQ-LxkBvJxRFUJgpBAh_XyLGoFk5J75K4MA4X0-2BNE/edit",
       "published_date": "2026-10-28",
-      "status": "PUBLIC_WITH_QA_PENDING",
+      "status": "PUBLISHED",
       "release_batch": "ReleaseBatch70"
     },
     {
@@ -129,7 +120,7 @@
       "title": "여호와의 율법을 즐거워하는 사람",
       "doc_url": "https://docs.google.com/document/d/1diQaeggcTcPzdeGMxWKEi6QADH53FtvIkAwqF7KcBvE/edit",
       "published_date": "2026-10-28",
-      "status": "PUBLIC_WITH_QA_PENDING",
+      "status": "PUBLISHED",
       "release_batch": "ReleaseBatch70"
     },
     {
@@ -139,7 +130,7 @@
       "title": "그 아들에게 입맞추라",
       "doc_url": "https://docs.google.com/document/d/13QFFkrYYtImqiWNGcW8appP-iu2_KjNxDmy51C2oUJc/edit",
       "published_date": "2026-10-28",
-      "status": "PUBLIC_WITH_QA_PENDING",
+      "status": "PUBLISHED",
       "release_batch": "ReleaseBatch70"
     },
     {
@@ -149,7 +140,7 @@
       "title": "둘러싼 두려움보다 큰 구원",
       "doc_url": "https://docs.google.com/document/d/1bDG4HlAYDjzdRmcI5LgEYg-AaHVPzWPwaSMh0Wjzkxo/edit",
       "published_date": "2026-10-28",
-      "status": "PUBLIC_WITH_QA_PENDING",
+      "status": "PUBLISHED",
       "release_batch": "ReleaseBatch70"
     },
     {
@@ -159,7 +150,7 @@
       "title": "평안히 눕고 자는 기도",
       "doc_url": "https://docs.google.com/document/d/1YGg5wqwVUC_IWvvxReLrqnEV02SeDVdycQ1m0ujYo44/edit",
       "published_date": "2026-10-28",
-      "status": "PUBLIC_WITH_QA_PENDING",
+      "status": "PUBLISHED",
       "release_batch": "ReleaseBatch70"
     },
     {
@@ -169,7 +160,7 @@
       "title": "보시기에 좋았더라",
       "doc_url": "https://docs.google.com/document/d/1c1MojmfLHiySziUogVvx0tXece4ntzuJBe_Hmpqzp3g/edit",
       "published_date": "2026-10-28",
-      "status": "PUBLIC_WITH_QA_PENDING",
+      "status": "PUBLISHED",
       "release_batch": "ReleaseBatch70"
     },
     {
@@ -179,7 +170,7 @@
       "title": "흙으로 빚으시고 생기를 주시다",
       "doc_url": "https://docs.google.com/document/d/1HqV6ZPeTNjZY0zZaQiRZ9JK56qdEtH89YmpF2XF3GCQ/edit",
       "published_date": "2026-10-28",
-      "status": "PUBLIC_WITH_QA_PENDING",
+      "status": "PUBLISHED",
       "release_batch": "ReleaseBatch70"
     },
     {
@@ -189,7 +180,7 @@
       "title": "숨은 사람을 찾으시는 하나님",
       "doc_url": "https://docs.google.com/document/d/1bzjR9u-Guh6KR7_rk59wXH7RJ78EDaLPIfevo32FXeU/edit",
       "published_date": "2026-10-28",
-      "status": "PUBLIC_WITH_QA_PENDING",
+      "status": "PUBLISHED",
       "release_batch": "ReleaseBatch70"
     },
     {
@@ -199,7 +190,7 @@
       "title": "형제의 피를 들으시는 하나님",
       "doc_url": "https://docs.google.com/document/d/1MJZ200wVV9j32ayB6QPwQvhMT5gD-3J9oLg7ZOfJgYA/edit",
       "published_date": "2026-10-28",
-      "status": "PUBLIC_WITH_QA_PENDING",
+      "status": "PUBLISHED",
       "release_batch": "ReleaseBatch70"
     },
     {
@@ -209,7 +200,7 @@
       "title": "모든 것을 잃은 자리에서도",
       "doc_url": "https://docs.google.com/document/d/1gZCa88QxCvWowClJ8x8Pd_zM7VryCAnDRMYF96kS74U/edit",
       "published_date": "2026-10-28",
-      "status": "PUBLIC_WITH_QA_PENDING",
+      "status": "PUBLISHED",
       "release_batch": "ReleaseBatch70"
     },
     {
@@ -219,7 +210,7 @@
       "title": "고난 속에서도 하나님 앞에",
       "doc_url": "https://docs.google.com/document/d/1OKQtY-UQfuUaKKyliz2OCpOZmTmPNMDPLQ83K-V0L_0/edit",
       "published_date": "2026-10-28",
-      "status": "PUBLIC_WITH_QA_PENDING",
+      "status": "PUBLISHED",
       "release_batch": "ReleaseBatch70"
     },
     {
@@ -229,7 +220,7 @@
       "title": "왜 내가 태어났는가?",
       "doc_url": "https://docs.google.com/document/d/1ziYQ_z0yydAf7x7GZ8YkdPseGP48GjcdkGXyLUNAvUY/edit",
       "published_date": "2026-10-28",
-      "status": "PUBLIC_WITH_QA_PENDING",
+      "status": "PUBLISHED",
       "release_batch": "ReleaseBatch70"
     },
     {
@@ -239,7 +230,7 @@
       "title": "엘리바스의 첫 말",
       "doc_url": "https://docs.google.com/document/d/1m86IX5tfyANQFrItxR0clmcKOijZ63zUEXkQwWjHIqw/edit",
       "published_date": "2026-10-28",
-      "status": "PUBLIC_WITH_QA_PENDING",
+      "status": "PUBLISHED",
       "release_batch": "ReleaseBatch70"
     },
     {
@@ -249,7 +240,7 @@
       "title": "유다의 마지막 시대에 찾아온 말씀",
       "doc_url": "https://docs.google.com/document/d/1cLgj9yWTno4YlrAUSqo_qbPrW6sbaIQzfSf-n-Y7W0M/edit",
       "published_date": "2026-10-28",
-      "status": "PUBLIC_WITH_QA_PENDING",
+      "status": "PUBLISHED",
       "release_batch": "ReleaseBatch70"
     },
     {
@@ -259,7 +250,7 @@
       "title": "내 말을 네 입에 두었다",
       "doc_url": "https://docs.google.com/document/d/17KnzXqiLrvoeI7r3XwOmLGHjo0vcLatcVbiSSa1m6CE/edit",
       "published_date": "2026-10-28",
-      "status": "PUBLIC_WITH_QA_PENDING",
+      "status": "PUBLISHED",
       "release_batch": "ReleaseBatch70"
     },
     {
@@ -269,7 +260,7 @@
       "title": "내가 내 말을 지켜 이루리라",
       "doc_url": "https://docs.google.com/document/d/18wX7YcAqtMzVH9mnpf0AMyRqCh0SIlD_tNA9B-k19b4/edit",
       "published_date": "2026-10-28",
-      "status": "PUBLIC_WITH_QA_PENDING",
+      "status": "PUBLISHED",
       "release_batch": "ReleaseBatch70"
     },
     {
@@ -279,7 +270,7 @@
       "title": "생수의 근원을 버리다",
       "doc_url": "https://docs.google.com/document/d/1mvxppNHFVOSp92ooohfVPu3sdtLbZXzdHfgAiD1tcT8/edit",
       "published_date": "2026-10-28",
-      "status": "PUBLIC_WITH_QA_PENDING",
+      "status": "PUBLISHED",
       "release_batch": "ReleaseBatch70"
     }
   ],

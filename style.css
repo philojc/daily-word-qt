@@ -204,3 +204,25 @@ button{cursor:pointer}
 .dw-btn{background:#356449;color:white;border-color:#356449}
 .dw-secondary{background:#edf5ec;color:#3c6847;margin:0 8px 8px 0}
 @media(max-width:650px){.dw-fields{grid-template-columns:1fr}.dw-actions{flex-direction:column}.dw-actions button{width:100%}}
+
+/* Reading guide and distinct deep-study sections */
+.q-reader-jump{display:flex;flex-wrap:wrap;gap:8px;margin:19px 0 22px}
+.q-reader-jump a{display:inline-flex;align-items:center;padding:9px 12px;border:1px solid #cfdcce;border-radius:10px;background:#f4f8f1;color:#42664c;font-weight:700;font-size:12px;text-decoration:none}
+.q-reader-jump a:hover,.q-reader-jump a:focus-visible{background:#e5f1e6;outline:2px solid #7ca583;outline-offset:1px}
+#qt-scripture,#qt-main,#qt-deep,#qt-sources{scroll-margin-top:30px}
+.q-block-title{font-size:22px;color:#31563f;margin:0 0 18px;line-height:1.4}
+.q-main-block{padding:20px 0 9px}
+.q-deep-block{margin:31px 0;padding:25px 24px;border:1px solid #d6e3d4;background:#f5f8f2;border-radius:17px}
+.q-deep-label{font-size:10px;font-weight:800;letter-spacing:.13em;color:#6f9475;margin-bottom:8px}
+.q-deep-intro{font-size:13px;color:#708778;line-height:1.7;margin-bottom:22px}
+.q-main-block .q-section h3,.q-deep-block .q-section h3{font-size:17px;color:#315a42;margin:22px 0 13px;line-height:1.5}
+.q-deep-block .q-section{border-bottom:1px solid #dce9d9;padding-bottom:9px;margin-bottom:15px}
+.q-deep-block .q-section:last-child{border-bottom:0;margin-bottom:0}
+.q-profile-list{display:flex;flex-direction:column;gap:9px}
+.q-profile-item{display:flex;align-items:center;gap:9px}
+.q-profile-item button{font-size:13px;cursor:pointer}
+.q-profile-item [data-profile]{flex:1;text-align:left;min-width:0;border:1px solid #d2dfd3;border-radius:9px;padding:11px 13px;background:#fff;color:#395f44;word-break:break-word}
+.q-profile-item [data-profile].active{background:#e9f2e8;border-color:#96b6a0;font-weight:750}
+.q-profile-item .q-delete-profile{flex-shrink:0;padding:10px 12px;border-radius:9px;background:#fff;border:1px solid #e5c5c5;color:#9c4444}
+.q-profile-item .q-delete-profile:hover,.q-profile-item .q-delete-profile:focus-visible{background:#fff0f0}
+@media(max-width:650px){.q-deep-block{padding:19px 16px;margin:23px -4px}.q-reader-jump{gap:6px}.q-reader-jump a{padding:8px 9px;font-size:11px}.q-block-title{font-size:20px}}

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "timezone": "America/New_York",
-  "generatedAt": "2026-10-28T21:02:58.868Z",
+  "generatedAt": "2026-10-28T22:10:00Z",
   "published": [
     {
       "session_id": "ACT-001",
@@ -272,6 +272,16 @@
       "published_date": "2026-10-28",
       "status": "PUBLISHED",
       "release_batch": "ReleaseBatch70"
+    },
+    {
+      "session_id": "JES-PILOT-LK05",
+      "plan_id": "JES",
+      "book_passage": "눅 5:1–11",
+      "title": "예수님은 왜 죄인에게 떠나지 않으셨는가?",
+      "doc_url": "https://docs.google.com/document/d/1q50SR-8bb8aqBaPIQNJ6LN-2j7QesfwA28evbS_8kAQ/edit",
+      "published_date": "2026-10-28",
+      "status": "PUBLISHED",
+      "release_batch": "PILOT"
     }
   ],
   "dailySchedule": []

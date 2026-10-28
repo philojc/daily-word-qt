@@ -37,9 +37,9 @@ jobs:
           if not isinstance(published, list) or not isinstance(scheduled, list):
               raise SystemExit("Published and dailySchedule must be arrays.")
           raw = Path("app.js").read_text(encoding="utf-8")
-          if not raw.startswith("const DATA=") or ";\\n" not in raw:
+          if not raw.startswith("const DATA=") or ";\n" not in raw:
               raise SystemExit("Missing static app DATA.")
-          app = json.loads(raw.split(";\\n", 1)[0].removeprefix("const DATA="))
+          app = json.loads(raw.split(";\n", 1)[0].removeprefix("const DATA="))
           entries = {x["id"]: x for x in app["entries"]}
           index = {x["id"]: x for x in app["index"]}
           seen = set()

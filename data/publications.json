@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "timezone": "America/New_York",
-  "generatedAt": "2026-10-28T22:10:00Z",
+  "generatedAt": "2026-10-29T04:05:12.626Z",
   "published": [
     {
       "session_id": "ACT-001",
@@ -282,6 +282,17 @@
       "published_date": "2026-10-28",
       "status": "PUBLISHED",
       "release_batch": "PILOT"
+    },
+    {
+      "session_id": "JES-004",
+      "plan_id": "JES",
+      "book_passage": "요 2:1–12",
+      "title": "잔치의 기쁨보다 더 큰 영광",
+      "doc_url": "https://docs.google.com/document/d/1mXa8AGL21emzF7GnEfSkzBS4gqGQoNyMfjOsxR_uJ8s/edit",
+      "published_date": "2026-10-29",
+      "slot_local": "2026-10-29T00:00:00-04:00",
+      "status": "PUBLISHED",
+      "release_batch": "ReleaseBatch70"
     }
   ],
   "dailySchedule": []

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "timezone": "America/New_York",
-  "generatedAt": "2026-10-29T04:05:12.626Z",
+  "generatedAt": "2026-10-29T05:03:39Z",
   "published": [
     {
       "session_id": "ACT-001",
@@ -293,6 +293,17 @@
       "slot_local": "2026-10-29T00:00:00-04:00",
       "status": "PUBLISHED",
       "release_batch": "ReleaseBatch70"
+    },
+    {
+      "session_id": "ACT-005",
+      "plan_id": "ACT",
+      "book_passage": "행 2:37–47",
+      "title": "복음이 세운 공동체",
+      "doc_url": "https://docs.google.com/document/d/1cOGe3JBN4WhZmbUPZIwgENIrFD9l5T06tF1Lo55TCTM/edit",
+      "published_date": "2026-10-29",
+      "status": "PUBLISHED",
+      "release_batch": "ReleaseBatch70",
+      "slot_local": "2026-10-29T01:00:00-04:00"
     }
   ],
   "dailySchedule": []

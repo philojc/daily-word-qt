@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "timezone": "America/New_York",
-  "generatedAt": "2026-10-29T16:05:37.067Z",
+  "generatedAt": "2026-10-29T19:03:47.000Z",
   "published": [
     {
       "session_id": "ACT-001",
@@ -412,6 +412,18 @@
       "status": "PUBLISHED",
       "release_batch": "ReleaseBatch70",
       "unit_type": "BRIDGE"
+    },
+    {
+      "session_id": "ACT-007",
+      "plan_id": "ACT",
+      "book_passage": "행 3:17–26",
+      "title": "돌아오라, 새롭게 하실 때까지",
+      "doc_url": "https://docs.google.com/document/d/1O3atyGbAKfJ6lQmdrdLqF9eTvGuDzw1bs4ytTnQu6VM/edit",
+      "published_date": "2026-10-29",
+      "slot_local": "2026-10-29T15:00:00-04:00",
+      "status": "PUBLISHED",
+      "release_batch": "ReleaseBatch70",
+      "unit_type": "DEEP"
     }
   ],
   "dailySchedule": []

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "timezone": "America/New_York",
-  "generatedAt": "2026-10-29T09:05:10.977Z",
+  "generatedAt": "2026-10-29T10:03:16.000Z",
   "published": [
     {
       "session_id": "ACT-001",
@@ -325,6 +325,18 @@
       "doc_url": "https://docs.google.com/document/d/1-JXl7M2GxPiFs42Gf-yt_ZoP86Xn3GFQgMPcFeb4U8o/edit",
       "published_date": "2026-10-29",
       "slot_local": "2026-10-29T05:00:00-04:00",
+      "status": "PUBLISHED",
+      "release_batch": "ReleaseBatch70",
+      "unit_type": "BRIDGE"
+    },
+    {
+      "session_id": "OTN-PRO-005",
+      "plan_id": "OTN-PROPHET",
+      "book_passage": "렘 2:14–37",
+      "title": "어디서부터 길을 잃었는가",
+      "doc_url": "https://docs.google.com/document/d/1GzDcEXpGHsiq6DceEs7CL2NejdIl3ykwdAf6PDxDmKs/edit",
+      "published_date": "2026-10-29",
+      "slot_local": "2026-10-29T06:00:00-04:00",
       "status": "PUBLISHED",
       "release_batch": "ReleaseBatch70",
       "unit_type": "BRIDGE"

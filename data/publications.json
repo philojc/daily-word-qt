@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "timezone": "America/New_York",
-  "generatedAt": "2026-10-29T10:03:16.000Z",
+  "generatedAt": "2026-10-29T11:03:37.000Z",
   "published": [
     {
       "session_id": "ACT-001",
@@ -340,6 +340,18 @@
       "status": "PUBLISHED",
       "release_batch": "ReleaseBatch70",
       "unit_type": "BRIDGE"
+    },
+    {
+      "session_id": "JES-005",
+      "plan_id": "JES",
+      "book_passage": "요 2:13–25",
+      "title": "아버지의 집을 향한 열심",
+      "doc_url": "https://docs.google.com/document/d/1b-qPACpNPB4BoFZaHBDr4S1rTOEbJNwCJyFpU7XJp2I/edit?usp=drivesdk",
+      "published_date": "2026-10-29",
+      "slot_local": "2026-10-29T07:00:00-04:00",
+      "status": "PUBLISHED",
+      "release_batch": "ReleaseBatch70",
+      "unit_type": "DEEP"
     }
   ],
   "dailySchedule": []

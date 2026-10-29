@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "timezone": "America/New_York",
-  "generatedAt": "2026-10-29T19:03:47.000Z",
+  "generatedAt": "2026-10-29T20:03:50.000Z",
   "published": [
     {
       "session_id": "ACT-001",
@@ -424,6 +424,18 @@
       "status": "PUBLISHED",
       "release_batch": "ReleaseBatch70",
       "unit_type": "DEEP"
+    },
+    {
+      "session_id": "EPI-005",
+      "plan_id": "EPI",
+      "book_passage": "롬 2:17–29",
+      "title": "겉모양과 마음의 할례",
+      "doc_url": "https://docs.google.com/document/d/1Y3_6JuOapwEnXdYt4SHZreBXP5XCFTJt7rfZoJYg0XM/edit",
+      "published_date": "2026-10-29",
+      "slot_local": "2026-10-29T16:00:00-04:00",
+      "status": "PUBLISHED",
+      "release_batch": "ReleaseBatch70",
+      "unit_type": "BRIDGE"
     }
   ],
   "dailySchedule": []

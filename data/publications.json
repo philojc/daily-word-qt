@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "timezone": "America/New_York",
-  "generatedAt": "2026-10-29T12:07:36.211Z",
+  "generatedAt": "2026-10-29T14:08:36.818Z",
   "published": [
     {
       "session_id": "ACT-001",
@@ -361,6 +361,18 @@
       "doc_url": "https://docs.google.com/document/d/1PMlYVHMaFBxIWiNvccaUyVQJ1H1ewFb_AZiRT7UCTOc/edit",
       "published_date": "2026-10-29",
       "slot_local": "2026-10-29T08:00:00-04:00",
+      "status": "PUBLISHED",
+      "release_batch": "ReleaseBatch70",
+      "unit_type": "DEEP"
+    },
+    {
+      "session_id": "PSA-R70-006",
+      "plan_id": "PSA",
+      "book_passage": "시 6:1–10",
+      "title": "눈물과 회개의 부르짖음",
+      "doc_url": "https://docs.google.com/document/d/17dpD9nVN4g4JAdtwZZnK8D4TbWy5ykvfhXAYOydsLmY/edit",
+      "published_date": "2026-10-29",
+      "slot_local": "2026-10-29T10:00:00-04:00",
       "status": "PUBLISHED",
       "release_batch": "ReleaseBatch70",
       "unit_type": "DEEP"

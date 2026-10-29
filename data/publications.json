@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "timezone": "America/New_York",
-  "generatedAt": "2026-10-29T07:04:38Z",
+  "generatedAt": "2026-10-29T09:05:10.977Z",
   "published": [
     {
       "session_id": "ACT-001",
@@ -313,6 +313,18 @@
       "doc_url": "https://docs.google.com/document/d/1wkJDivfbTNKxEJkAn4B-jDwbr2BieeqQk4xJhDPjCnU/edit",
       "published_date": "2026-10-29",
       "slot_local": "2026-10-29T03:00:00-04:00",
+      "status": "PUBLISHED",
+      "release_batch": "ReleaseBatch70",
+      "unit_type": "BRIDGE"
+    },
+    {
+      "session_id": "OTN-WIS-005",
+      "plan_id": "OTN-WISDOM",
+      "book_passage": "욥 5:1–27",
+      "title": "옳은 말이 항상 옳은 위로일까",
+      "doc_url": "https://docs.google.com/document/d/1-JXl7M2GxPiFs42Gf-yt_ZoP86Xn3GFQgMPcFeb4U8o/edit",
+      "published_date": "2026-10-29",
+      "slot_local": "2026-10-29T05:00:00-04:00",
       "status": "PUBLISHED",
       "release_batch": "ReleaseBatch70",
       "unit_type": "BRIDGE"

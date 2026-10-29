@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "timezone": "America/New_York",
-  "generatedAt": "2026-10-29T05:03:39Z",
+  "generatedAt": "2026-10-29T07:04:38Z",
   "published": [
     {
       "session_id": "ACT-001",
@@ -304,6 +304,18 @@
       "status": "PUBLISHED",
       "release_batch": "ReleaseBatch70",
       "slot_local": "2026-10-29T01:00:00-04:00"
+    },
+    {
+      "session_id": "PSA-R70-005",
+      "plan_id": "PSA",
+      "book_passage": "시 5:1–12",
+      "title": "아침에 내 목소리를 들으소서",
+      "doc_url": "https://docs.google.com/document/d/1wkJDivfbTNKxEJkAn4B-jDwbr2BieeqQk4xJhDPjCnU/edit",
+      "published_date": "2026-10-29",
+      "slot_local": "2026-10-29T03:00:00-04:00",
+      "status": "PUBLISHED",
+      "release_batch": "ReleaseBatch70",
+      "unit_type": "BRIDGE"
     }
   ],
   "dailySchedule": []

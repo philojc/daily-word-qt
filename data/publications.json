@@ -376,18 +376,6 @@
       "status": "PUBLISHED",
       "release_batch": "ReleaseBatch70",
       "unit_type": "DEEP"
-    },
-    {
-      "session_id": "OTN-WIS-006",
-      "plan_id": "OTN-WISDOM",
-      "book_passage": "욥 6:1–30",
-      "title": "고통을 정확하게 들어 달라",
-      "doc_url": "https://docs.google.com/document/d/1IIMCtSuLRW0Qp_mA7An25jFCB55huE3xW-heuhAv94I/edit",
-      "published_date": "2026-10-29",
-      "slot_local": "2026-10-29T11:00:00-04:00",
-      "status": "PUBLISHED",
-      "release_batch": "ReleaseBatch70",
-      "unit_type": "DEEP"
     }
   ],
   "dailySchedule": []

@@ -51,8 +51,10 @@ jobs:
               if sid not in entries or sid not in index or not index[sid].get("available"):
                   raise SystemExit(f"Published session {sid} is not readable in the app.")
               entry = entries[sid]
-              if not entry.get("verses") or not entry.get("sections") or not entry.get("sources"):
-                  raise SystemExit(f"Published session {sid} lacks required content.")
+              if not entry.get("sections") or not entry.get("sources"):
+                  raise SystemExit(f"Published session {sid} lacks required commentary or sources.")
+              if not entry.get("verses") and not entry.get("bible", "").startswith("https://www.bible.com/"):
+                  raise SystemExit(f"Published session {sid} lacks both verses and an approved full-text link.")
               if item.get("doc_url") != index[sid].get("doc"):
                   raise SystemExit(f"Published Doc mismatch for {sid}.")
           for item in scheduled:

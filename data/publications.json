@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "timezone": "America/New_York",
-  "generatedAt": "2026-10-29T14:08:36.818Z",
+  "generatedAt": "2026-10-29T15:04:41.000Z",
   "published": [
     {
       "session_id": "ACT-001",
@@ -373,6 +373,18 @@
       "doc_url": "https://docs.google.com/document/d/17dpD9nVN4g4JAdtwZZnK8D4TbWy5ykvfhXAYOydsLmY/edit",
       "published_date": "2026-10-29",
       "slot_local": "2026-10-29T10:00:00-04:00",
+      "status": "PUBLISHED",
+      "release_batch": "ReleaseBatch70",
+      "unit_type": "DEEP"
+    },
+    {
+      "session_id": "OTN-WIS-006",
+      "plan_id": "OTN-WISDOM",
+      "book_passage": "욥 6:1–30",
+      "title": "고통을 정확하게 들어 달라",
+      "doc_url": "https://docs.google.com/document/d/1IIMCtSuLRW0Qp_mA7An25jFCB55huE3xW-heuhAv94I/edit",
+      "published_date": "2026-10-29",
+      "slot_local": "2026-10-29T11:00:00-04:00",
       "status": "PUBLISHED",
       "release_batch": "ReleaseBatch70",
       "unit_type": "DEEP"

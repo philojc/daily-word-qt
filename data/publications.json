@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "timezone": "America/New_York",
-  "generatedAt": "2026-10-29T22:03:20.000Z",
+  "generatedAt": "2026-10-29T23:58:32.287Z",
   "published": [
     {
       "session_id": "ACT-001",
@@ -445,6 +445,18 @@
       "doc_url": "https://docs.google.com/document/d/1AoJFNkJkTuyDt4S33beOzkm4FK5m38BbmDdCP0okbp0/edit",
       "published_date": "2026-10-29",
       "slot_local": "2026-10-29T18:00:00-04:00",
+      "status": "PUBLISHED",
+      "release_batch": "ReleaseBatch70",
+      "unit_type": "DEEP"
+    },
+    {
+      "session_id": "OTN-WIS-007",
+      "plan_id": "OTN-WISDOM",
+      "book_passage": "욥 7:1–21",
+      "title": "고난 속에서 하나님께 묻다",
+      "doc_url": "https://docs.google.com/document/d/1tkUVBf83lE61Z2_7vg5BOCFo-3ED5aibjvH3SN-YWzU/edit",
+      "published_date": "2026-10-29",
+      "slot_local": "2026-10-29T19:00:00-04:00",
       "status": "PUBLISHED",
       "release_batch": "ReleaseBatch70",
       "unit_type": "DEEP"

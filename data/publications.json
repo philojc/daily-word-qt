@@ -400,6 +400,18 @@
       "status": "PUBLISHED",
       "release_batch": "ReleaseBatch70",
       "unit_type": "DEEP"
+    },
+    {
+      "session_id": "OTN-PRO-006",
+      "plan_id": "OTN-PROPHET",
+      "book_passage": "렘 3:1–5",
+      "title": "돌아오라는 부르심 앞에서",
+      "doc_url": "https://docs.google.com/document/d/1AEoCb20Yn_BV9eQm1Bm_Kr0EzPCn-bhinWh77rerm1Y/edit",
+      "published_date": "2026-10-29",
+      "slot_local": "2026-10-29T13:00:00-04:00",
+      "status": "PUBLISHED",
+      "release_batch": "ReleaseBatch70",
+      "unit_type": "BRIDGE"
     }
   ],
   "dailySchedule": []

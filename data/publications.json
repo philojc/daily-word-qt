@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "timezone": "America/New_York",
-  "generatedAt": "2026-10-30T12:56:13.000Z",
+  "generatedAt": "2026-10-30T14:00:10.806Z",
   "published": [
     {
       "session_id": "ACT-001",
@@ -556,6 +556,18 @@
       "status": "PUBLISHED",
       "release_batch": "ReleaseBatch70",
       "unit_type": "BRIDGE"
+    },
+    {
+      "session_id": "EPI-007",
+      "plan_id": "EPI",
+      "book_passage": "롬 3:21–31",
+      "title": "이제는 하나님의 의가 나타났다",
+      "doc_url": "https://docs.google.com/document/d/1ZLad7PHtmBOBfq6XVdbOWTqXqmpdujBYsrBO9ocJcvU/edit?usp=drivesdk",
+      "published_date": "2026-10-30",
+      "slot_local": "2026-10-30T09:00:00-04:00",
+      "status": "PUBLISHED",
+      "release_batch": "ReleaseBatch70",
+      "unit_type": "DEEP"
     }
   ],
   "dailySchedule": []

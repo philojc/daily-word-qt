@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "timezone": "America/New_York",
-  "generatedAt": "2026-10-30T05:56:49Z",
+  "generatedAt": "2026-10-30T06:57:06Z",
   "published": [
     {
       "session_id": "ACT-001",
@@ -481,6 +481,18 @@
       "doc_url": "https://docs.google.com/document/d/1nmLleoG2euYnwu-4xcJ__HSdjM_3apLPRQFZPZLjEyc/edit",
       "published_date": "2026-10-30",
       "slot_local": "2026-10-30T01:00:00-04:00",
+      "status": "PUBLISHED",
+      "release_batch": "ReleaseBatch70",
+      "unit_type": "DEEP"
+    },
+    {
+      "session_id": "EPI-006",
+      "plan_id": "EPI",
+      "book_passage": "롬 3:1–20",
+      "title": "의인은 없다",
+      "doc_url": "https://docs.google.com/document/d/1CJuFTxIGVsrfBFcgEwl4G7nmRJnc8nqhGfs9b9T5RDg/edit",
+      "published_date": "2026-10-30",
+      "slot_local": "2026-10-30T02:00:00-04:00",
       "status": "PUBLISHED",
       "release_batch": "ReleaseBatch70",
       "unit_type": "DEEP"

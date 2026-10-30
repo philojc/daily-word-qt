@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "timezone": "America/New_York",
-  "generatedAt": "2026-10-30T21:03:29Z",
+  "generatedAt": "2026-10-30T23:05:33.254Z",
   "published": [
     {
       "session_id": "ACT-001",
@@ -637,6 +637,18 @@
       "doc_url": "https://docs.google.com/document/d/1exTU9xNIt-maJhKV_d2MEyXoQdRjeZHwac4qQkYaiUY/edit",
       "published_date": "2026-10-30",
       "slot_local": "2026-10-30T17:00:00-04:00",
+      "status": "PUBLISHED",
+      "release_batch": "ReleaseBatch70",
+      "unit_type": "DEEP"
+    },
+    {
+      "session_id": "OTN-WIS-009",
+      "plan_id": "OTN-WISDOM",
+      "book_passage": "욥 9:1–35",
+      "title": "누가 하나님 앞에서 의롭다 하겠는가",
+      "doc_url": "https://docs.google.com/document/d/19oVbHZ2Qb06bV9_L1XinHemYkA1SpqfEZwZZwohmAhE/edit",
+      "published_date": "2026-10-30",
+      "slot_local": "2026-10-30T19:00:00-04:00",
       "status": "PUBLISHED",
       "release_batch": "ReleaseBatch70",
       "unit_type": "DEEP"

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "timezone": "America/New_York",
-  "generatedAt": "2026-10-30T09:06:34.965Z",
+  "generatedAt": "2026-10-30T10:57:24.299Z",
   "published": [
     {
       "session_id": "ACT-001",
@@ -520,6 +520,18 @@
       "status": "PUBLISHED",
       "release_batch": "ReleaseBatch70",
       "unit_type": "BRIDGE"
+    },
+    {
+      "session_id": "OTN-PRO-007",
+      "plan_id": "OTN-PROPHET",
+      "book_passage": "렘 3:6–25",
+      "title": "배신한 자여 돌아오라",
+      "doc_url": "https://docs.google.com/document/d/1Ei-_o02WWHwPg5hi-LE0TFbxILyOl33aXOwMyVnTqjE/edit?usp=drivesdk",
+      "published_date": "2026-10-30",
+      "slot_local": "2026-10-30T06:00:00-04:00",
+      "status": "PUBLISHED",
+      "release_batch": "ReleaseBatch70",
+      "unit_type": "DEEP"
     }
   ],
   "dailySchedule": []

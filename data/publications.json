@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "timezone": "America/New_York",
-  "generatedAt": "2026-10-30T20:04:52Z",
+  "generatedAt": "2026-10-30T21:03:29Z",
   "published": [
     {
       "session_id": "ACT-001",
@@ -625,6 +625,18 @@
       "doc_url": "https://docs.google.com/document/d/1Terz9ub_QWiW6kk41I2heewFm5vJfVO8b_rCXpp2veI/edit?usp=drivesdk",
       "published_date": "2026-10-30",
       "slot_local": "2026-10-30T16:00:00-04:00",
+      "status": "PUBLISHED",
+      "release_batch": "ReleaseBatch70",
+      "unit_type": "DEEP"
+    },
+    {
+      "session_id": "PSA-R70-008",
+      "plan_id": "PSA",
+      "book_passage": "시 8:1–9",
+      "title": "사람이 무엇이기에",
+      "doc_url": "https://docs.google.com/document/d/1exTU9xNIt-maJhKV_d2MEyXoQdRjeZHwac4qQkYaiUY/edit",
+      "published_date": "2026-10-30",
+      "slot_local": "2026-10-30T17:00:00-04:00",
       "status": "PUBLISHED",
       "release_batch": "ReleaseBatch70",
       "unit_type": "DEEP"

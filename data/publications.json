@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "timezone": "America/New_York",
-  "generatedAt": "2026-10-30T17:04:07Z",
+  "generatedAt": "2026-10-30T19:04:30Z",
   "published": [
     {
       "session_id": "ACT-001",
@@ -601,6 +601,18 @@
       "doc_url": "https://docs.google.com/document/d/1rU2rePB7RtdD0m1tqHrNb6ADtHXaeJEEAuUroOlXIa8/edit",
       "published_date": "2026-10-30",
       "slot_local": "2026-10-30T13:00:00-04:00",
+      "status": "PUBLISHED",
+      "release_batch": "ReleaseBatch70",
+      "unit_type": "DEEP"
+    },
+    {
+      "session_id": "ACT-010",
+      "plan_id": "ACT",
+      "book_passage": "행 4:23–31",
+      "title": "담대히 말씀을 전하게 하소서",
+      "doc_url": "https://docs.google.com/document/d/1y39zmLxM602vnvK-Hxm-MeCuOWYKsTJaNQLqnc7k-54/edit",
+      "published_date": "2026-10-30",
+      "slot_local": "2026-10-30T15:00:00-04:00",
       "status": "PUBLISHED",
       "release_batch": "ReleaseBatch70",
       "unit_type": "DEEP"

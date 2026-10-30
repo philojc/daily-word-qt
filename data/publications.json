@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "timezone": "America/New_York",
-  "generatedAt": "2026-10-30T14:59:24.265Z",
+  "generatedAt": "2026-10-30T15:55:29Z",
   "published": [
     {
       "session_id": "ACT-001",
@@ -580,6 +580,18 @@
       "status": "PUBLISHED",
       "release_batch": "ReleaseBatch70",
       "unit_type": "BRIDGE"
+    },
+    {
+      "session_id": "OTN-HIS-008",
+      "plan_id": "OTN-HISTORY",
+      "book_passage": "창 8:1–22",
+      "title": "하나님이 노아를 기억하셨다",
+      "doc_url": "https://docs.google.com/document/d/1cdOELoDC7BRNSpLBgrw9Rog2KaOnJ_6qDGtkPeO71gM/edit",
+      "published_date": "2026-10-30",
+      "slot_local": "2026-10-30T11:00:00-04:00",
+      "status": "PUBLISHED",
+      "release_batch": "ReleaseBatch70",
+      "unit_type": "DEEP"
     }
   ],
   "dailySchedule": []

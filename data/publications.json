@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "timezone": "America/New_York",
-  "generatedAt": "2026-10-30T06:57:06Z",
+  "generatedAt": "2026-10-30T08:03:34Z",
   "published": [
     {
       "session_id": "ACT-001",
@@ -496,6 +496,18 @@
       "status": "PUBLISHED",
       "release_batch": "ReleaseBatch70",
       "unit_type": "DEEP"
+    },
+    {
+      "session_id": "OTN-HIS-007",
+      "plan_id": "OTN-HISTORY",
+      "book_passage": "창 7:1–24",
+      "title": "심판 가운데 닫힌 문",
+      "doc_url": "https://docs.google.com/document/d/1kE3RgcD7dUqvCa1HtzDRCYDQdRFHJF8nvwq-JR4Ltfw/edit?usp=drivesdk",
+      "published_date": "2026-10-30",
+      "slot_local": "2026-10-30T04:00:00-04:00",
+      "status": "PUBLISHED",
+      "release_batch": "ReleaseBatch70",
+      "unit_type": "BRIDGE"
     }
   ],
   "dailySchedule": []

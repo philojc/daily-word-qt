@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "timezone": "America/New_York",
-  "generatedAt": "2026-10-30T10:57:24.299Z",
+  "generatedAt": "2026-10-30T11:58:07.019Z",
   "published": [
     {
       "session_id": "ACT-001",
@@ -529,6 +529,18 @@
       "doc_url": "https://docs.google.com/document/d/1Ei-_o02WWHwPg5hi-LE0TFbxILyOl33aXOwMyVnTqjE/edit?usp=drivesdk",
       "published_date": "2026-10-30",
       "slot_local": "2026-10-30T06:00:00-04:00",
+      "status": "PUBLISHED",
+      "release_batch": "ReleaseBatch70",
+      "unit_type": "DEEP"
+    },
+    {
+      "session_id": "JES-007",
+      "plan_id": "JES",
+      "book_passage": "요 4:1–26",
+      "title": "생수를 주시는 예수님",
+      "doc_url": "https://docs.google.com/document/d/1tRpkgzJkKWll4ST2tCZqUwoWsx59b0RTE4PPqzKeCrM/edit?usp=drivesdk",
+      "published_date": "2026-10-30",
+      "slot_local": "2026-10-30T07:00:00-04:00",
       "status": "PUBLISHED",
       "release_batch": "ReleaseBatch70",
       "unit_type": "DEEP"

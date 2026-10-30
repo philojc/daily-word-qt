@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "timezone": "America/New_York",
-  "generatedAt": "2026-10-30T19:04:30Z",
+  "generatedAt": "2026-10-30T20:04:52Z",
   "published": [
     {
       "session_id": "ACT-001",
@@ -613,6 +613,18 @@
       "doc_url": "https://docs.google.com/document/d/1y39zmLxM602vnvK-Hxm-MeCuOWYKsTJaNQLqnc7k-54/edit",
       "published_date": "2026-10-30",
       "slot_local": "2026-10-30T15:00:00-04:00",
+      "status": "PUBLISHED",
+      "release_batch": "ReleaseBatch70",
+      "unit_type": "DEEP"
+    },
+    {
+      "session_id": "EPI-008",
+      "plan_id": "EPI",
+      "book_passage": "롬 4:1–12",
+      "title": "아브라함이 믿은 하나님",
+      "doc_url": "https://docs.google.com/document/d/1Terz9ub_QWiW6kk41I2heewFm5vJfVO8b_rCXpp2veI/edit?usp=drivesdk",
+      "published_date": "2026-10-30",
+      "slot_local": "2026-10-30T16:00:00-04:00",
       "status": "PUBLISHED",
       "release_batch": "ReleaseBatch70",
       "unit_type": "DEEP"

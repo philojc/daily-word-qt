@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "timezone": "America/New_York",
-  "generatedAt": "2026-10-30T04:56:24Z",
+  "generatedAt": "2026-10-30T05:56:49Z",
   "published": [
     {
       "session_id": "ACT-001",
@@ -469,6 +469,18 @@
       "doc_url": "https://docs.google.com/document/d/1ZItGwSsrRj6IBAgu9GPA8F13UYcKkEKRkbvGaMEerc4/edit?usp=drivesdk",
       "published_date": "2026-10-30",
       "slot_local": "2026-10-30T00:00:00-04:00",
+      "status": "PUBLISHED",
+      "release_batch": "ReleaseBatch70",
+      "unit_type": "DEEP"
+    },
+    {
+      "session_id": "ACT-008",
+      "plan_id": "ACT",
+      "book_passage": "행 4:1–12",
+      "title": "다른 이름으로는 구원받을 수 없다",
+      "doc_url": "https://docs.google.com/document/d/1nmLleoG2euYnwu-4xcJ__HSdjM_3apLPRQFZPZLjEyc/edit",
+      "published_date": "2026-10-30",
+      "slot_local": "2026-10-30T01:00:00-04:00",
       "status": "PUBLISHED",
       "release_batch": "ReleaseBatch70",
       "unit_type": "DEEP"

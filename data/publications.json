@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "timezone": "America/New_York",
-  "generatedAt": "2026-10-30T14:00:10.806Z",
+  "generatedAt": "2026-10-30T14:59:24.265Z",
   "published": [
     {
       "session_id": "ACT-001",
@@ -568,6 +568,18 @@
       "status": "PUBLISHED",
       "release_batch": "ReleaseBatch70",
       "unit_type": "DEEP"
+    },
+    {
+      "session_id": "PSA-R70-007",
+      "plan_id": "PSA",
+      "book_passage": "시 7:1–17",
+      "title": "의로운 재판장이신 하나님",
+      "doc_url": "https://docs.google.com/document/d/1uHGWwF-r59T1aOWXm8vTGv8fUa1H3Kj54YtU-lI3oOY/edit",
+      "published_date": "2026-10-30",
+      "slot_local": "2026-10-30T10:00:00-04:00",
+      "status": "PUBLISHED",
+      "release_batch": "ReleaseBatch70",
+      "unit_type": "BRIDGE"
     }
   ],
   "dailySchedule": []

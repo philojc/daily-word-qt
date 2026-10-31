@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "timezone": "America/New_York",
-  "generatedAt": "2026-10-30T23:05:33.254Z",
+  "generatedAt": "2026-10-31T00:05:20.649Z",
   "published": [
     {
       "session_id": "ACT-001",
@@ -652,6 +652,18 @@
       "status": "PUBLISHED",
       "release_batch": "ReleaseBatch70",
       "unit_type": "DEEP"
+    },
+    {
+      "session_id": "OTN-PRO-009",
+      "plan_id": "OTN-PROPHET",
+      "book_passage": "렘 4:5–31",
+      "title": "무너지는 땅 앞에서 우시는 선지자",
+      "doc_url": "https://docs.google.com/document/d/1YNNYC1UdG4PuP1Us5PWPvZZN23ShXn4C37sQs-qsGWw/edit",
+      "published_date": "2026-10-30",
+      "slot_local": "2026-10-30T20:00:00-04:00",
+      "status": "PUBLISHED",
+      "release_batch": "ReleaseBatch70",
+      "unit_type": "BRIDGE"
     }
   ],
   "dailySchedule": []

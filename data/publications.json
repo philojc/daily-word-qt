@@ -664,6 +664,18 @@
       "status": "PUBLISHED",
       "release_batch": "ReleaseBatch70",
       "unit_type": "BRIDGE"
+    },
+    {
+      "session_id": "JES-008",
+      "plan_id": "JES",
+      "book_passage": "요 4:27–42",
+      "title": "아버지의 뜻이 나의 양식",
+      "doc_url": "https://docs.google.com/document/d/1MLW46n7rRhaZn4WpixnkSe_yJ5GwoKn9xOT2-ydQ0DA/edit",
+      "published_date": "2026-10-31",
+      "slot_local": "2026-10-31T00:00:00-04:00",
+      "status": "PUBLISHED",
+      "release_batch": "ReleaseBatch70",
+      "unit_type": "DEEP"
     }
   ],
   "dailySchedule": []

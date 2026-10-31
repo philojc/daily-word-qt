@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "timezone": "America/New_York",
-  "generatedAt": "2026-10-31T10:04:57.000Z",
+  "generatedAt": "2026-10-31T11:05:50.523Z",
   "published": [
     {
       "session_id": "ACT-001",
@@ -724,6 +724,18 @@
       "status": "PUBLISHED",
       "release_batch": "ReleaseBatch70",
       "unit_type": "BRIDGE"
+    },
+    {
+      "session_id": "JES-009",
+      "plan_id": "JES",
+      "book_passage": "요 4:43–54",
+      "title": "말씀을 믿고 돌아간 아버지",
+      "doc_url": "https://docs.google.com/document/d/1qSLkZv8HKypukkpNrQ9bjb6J4eScHv0QhccW2LMRBk0/edit",
+      "published_date": "2026-10-31",
+      "slot_local": "2026-10-31T07:00:00-04:00",
+      "status": "PUBLISHED",
+      "release_batch": "ReleaseBatch70",
+      "unit_type": "DEEP"
     }
   ],
   "dailySchedule": []

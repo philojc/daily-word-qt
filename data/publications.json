@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "timezone": "America/New_York",
-  "generatedAt": "2026-10-31T07:58:38Z",
+  "generatedAt": "2026-10-31T09:05:15.970Z",
   "published": [
     {
       "session_id": "ACT-001",
@@ -700,6 +700,18 @@
       "status": "PUBLISHED",
       "release_batch": "ReleaseBatch70",
       "unit_type": "BRIDGE"
+    },
+    {
+      "session_id": "OTN-WIS-010",
+      "plan_id": "OTN-WISDOM",
+      "book_passage": "욥 10:1–22",
+      "title": "나를 지으신 분께 묻다",
+      "doc_url": "https://docs.google.com/document/d/1oQwWkf4nDBIsQsvmZAY6ybTbStt2jA_9pRyJHS18dmU/edit",
+      "published_date": "2026-10-31",
+      "slot_local": "2026-10-31T05:00:00-04:00",
+      "status": "PUBLISHED",
+      "release_batch": "ReleaseBatch70",
+      "unit_type": "DEEP"
     }
   ],
   "dailySchedule": []

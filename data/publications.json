@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "timezone": "America/New_York",
-  "generatedAt": "2026-10-31T00:05:20.649Z",
+  "generatedAt": "2026-10-31T06:06:56.651Z",
   "published": [
     {
       "session_id": "ACT-001",
@@ -673,6 +673,18 @@
       "doc_url": "https://docs.google.com/document/d/1MLW46n7rRhaZn4WpixnkSe_yJ5GwoKn9xOT2-ydQ0DA/edit",
       "published_date": "2026-10-31",
       "slot_local": "2026-10-31T00:00:00-04:00",
+      "status": "PUBLISHED",
+      "release_batch": "ReleaseBatch70",
+      "unit_type": "DEEP"
+    },
+    {
+      "session_id": "EPI-009",
+      "plan_id": "EPI",
+      "book_passage": "롬 4:13–25",
+      "title": "약속을 붙든 믿음",
+      "doc_url": "https://docs.google.com/document/d/1GCtStUf-z1hZM28okNCO_xKuw3d9my88yx_Hfk6QBvs/edit",
+      "published_date": "2026-10-31",
+      "slot_local": "2026-10-31T02:00:00-04:00",
       "status": "PUBLISHED",
       "release_batch": "ReleaseBatch70",
       "unit_type": "DEEP"

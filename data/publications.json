@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "timezone": "America/New_York",
-  "generatedAt": "2026-10-31T22:58:59.678Z",
+  "generatedAt": "2026-11-01T07:04:09.000Z",
   "published": [
     {
       "session_id": "ACT-001",
@@ -757,6 +757,18 @@
       "doc_url": "https://docs.google.com/document/d/1CihIP3JMcmBViGwcG_JAJ600PrXzgJhuI0geS46N9ww/edit",
       "published_date": "2026-10-31",
       "slot_local": "2026-10-31T18:00:00-04:00",
+      "status": "PUBLISHED",
+      "release_batch": "ReleaseBatch70",
+      "unit_type": "DEEP"
+    },
+    {
+      "session_id": "EPI-010",
+      "plan_id": "EPI",
+      "book_passage": "롬 5:1–11",
+      "title": "원수 되었을 때 사랑하신 하나님",
+      "doc_url": "https://docs.google.com/document/d/1UOA7yA-vlih1nm-PPpbZcDXOognohdAn3oZfG0kO83w/edit",
+      "published_date": "2026-11-01",
+      "slot_local": "2026-11-01T02:00:00-05:00",
       "status": "PUBLISHED",
       "release_batch": "ReleaseBatch70",
       "unit_type": "DEEP"
